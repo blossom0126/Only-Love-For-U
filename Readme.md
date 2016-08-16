@@ -3,6 +3,7 @@
 ##提交格式：
 1. 名字---提交内容
 2. eg:"cuiqian---finish first story"
+
 ##github多人协作冲突及相关命令
 
 1. git log --oneline：在一行显示日志
