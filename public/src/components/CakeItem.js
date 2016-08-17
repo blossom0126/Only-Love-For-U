@@ -2,6 +2,7 @@
  * Created by jae on 16-8-14.
  */
 import React, {Component} from 'react';// eslint-disable-line no-unused-vars
+
 class CakeItem extends Component {
   render() {
     let {name, image, style,intro} = this.props;
@@ -15,9 +16,8 @@ class CakeItem extends Component {
             <div>{style}</div>
           </div>
         </div>
-
-
     );
   }
 }
+
 export default CakeItem;

@@ -12,7 +12,6 @@ class Logo extends Component {
                             <li className="active"><a href="#">蛋糕展示
                                 <span className="sr-only">(current)
                             </span></a></li>
-
                           <li><a href="#">
                               注册
                            </a></li>
