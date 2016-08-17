@@ -2,13 +2,13 @@
  * Created by jae on 16-8-16.
  */
 import React, {Component} from 'react';// eslint-disable-line no-unused-vars
-
-class App1 extends Component {
+import Logo from './Logo';
+class PersonCenter extends Component {
   render() {
     return (
-    <div>个人中心</div>
+<Logo/>
 
     );
   }
 }
-export default App1;
+export default PersonCenter;

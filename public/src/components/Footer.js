@@ -16,7 +16,7 @@ class Footer extends Component {
               <div className="bottom-nav">
                 <h4>LEARN</h4>
                 <ul>
-                  <li><a className="active" href="">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+                  <li><a className="active" href="http://127.0.0.1:3000">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
                   <li className="lost"><a href="http://127.0.0.1:3000/contact">联系我们</a></li>
                   <li><a href="http://127.0.0.1:3000/cakelist">蛋糕名录</a></li>
                   <li><a href="http://127.0.0.1:3000/exclusive">唯依专区</a></li>

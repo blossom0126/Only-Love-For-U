@@ -1,16 +1,14 @@
 /**
- * Created by hanyile on 16/8/17.
+ * Created by jae on 16-8-17.
  */
-
 import React, {Component} from 'react';// eslint-disable-line no-unused-vars
 import Logo from './Logo';
-class BrandStory extends Component {
+class Contact extends Component {
   render() {
     return (
-        <BrandStory/>
+        <Logo/>
 
     );
   }
 }
-export default Logo;
-
+export default Contact;
