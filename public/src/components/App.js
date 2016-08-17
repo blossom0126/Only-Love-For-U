@@ -4,6 +4,7 @@ import CakeList from '../container/CakeList';
 import Logo from './Logo';
 import SlideShow from './SlideShow';
 import BrandStory from './BrandStory';
+import AddTodo from '../container/AddTodo';
 
 
 class App extends Component {
@@ -11,8 +12,8 @@ class App extends Component {
     return (
         <div>
           <Logo/>
-          <CakeList/>
           <BrandStory/>
+          <AddTodo/>
           <SlideShow/>
           {/*<CakeList/>*/}
         </div>

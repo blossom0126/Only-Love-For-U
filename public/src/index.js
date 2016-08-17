@@ -3,6 +3,8 @@ import {render} from 'react-dom';
 import CakeList from './components/CakeList';
 import BrandStory from './components/BrandStory';
 import Login from './components/Login';
+import Slide from './components/SlideShow';
+import AddTodo from './container/AddTodo';
 import cakeList from './reducers';
 
 import {createStore, applyMiddleware} from 'redux';
@@ -24,6 +26,8 @@ render(
       <Route path="/login" component={Login}/>
       <Route path="/cakelist" component={CakeList}/>
         <Route path="/brandstory" component={BrandStory}/>
+        <Route path="/slideshow" component={Slide}/>
+        <Route path="/signup" component={AddTodo}/>
       </Router>
     </Provider>,
     document.getElementById('app')

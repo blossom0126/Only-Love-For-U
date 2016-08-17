@@ -13,7 +13,7 @@ class Logo extends Component {
 
                   <li><a href="http://127.0.0.1:3000/brandstory">品牌故事</a></li>
                   <li><a href="http://127.0.0.1:3000/login">个人中心</a></li>
-                  <li><a href="http://127.0.0.1:3000/sinup">注册</a></li>
+                  <li><a href="http://127.0.0.1:3000/signup">注册</a></li>
                   <li className="lost"><a href="http://127.0.0.1:3000/contact">联系我们</a></li>
                  
                   <div className="clearfix"> </div>
