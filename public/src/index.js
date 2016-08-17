@@ -1,11 +1,13 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import {render} from 'react-dom';
-import App from './components/App';
+import CakeList from './components/CakeList';
+import Login from './components/Login';
 import cakeList from './reducers';
 
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import cakeRequestMiddleware from './middlewares/cakeRequestMiddleware';
+import { Router, Route, browserHistory} from 'react-router';
 const store = createStore(
     cakeList,
     applyMiddleware(cakeRequestMiddleware)
@@ -17,7 +19,10 @@ store.dispatch({
 
 render(
     <Provider store={store}>
-      <App/>
+      <Router history={browserHistory}>
+      <Route path="/login" component={Login}/>
+      <Route path="/cakelist" component={CakeList}/>
+      </Router>
     </Provider>,
     document.getElementById('app')
 );
