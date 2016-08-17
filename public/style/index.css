@@ -384,12 +384,14 @@ li.lost {
     background: #fff;
     padding: 3em 0;
     text-align: center;
+    margin-top:-60px;
 }
 .about-section h2 {
-    color: #34495E;
-    font-size: 4em;
+    color: rgba(8, 8, 8, 0.97);
+    font-size: 60px;
     font-weight: 400;
-    font-family: 'Playball', cursive;
+    /*font-family: 'Playball', cursive;*/
+    font-family:'';
 }
 .ab-text {
     float: left;
@@ -497,7 +499,7 @@ a.more {
 }
 
 .ch-img-1 {
-    /*background-image: url('../images/t1.jpg');*/
+   /* background-image: url('../images/t1.jpg');*/
 }
 
 .ch-img-2 {

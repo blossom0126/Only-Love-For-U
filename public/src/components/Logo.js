@@ -8,11 +8,13 @@ class Logo extends Component {
               <div className="top-nav">
                 <span className="menu two"> </span>
                 <ul>
-                  <li><a href="">Home</a></li>
-                  <li><a className="active" href="">Cakes</a></li>
-                  <li><a href="">Exclusive</a></li>
-                  <li><a href="">Brand Story</a></li>
-                  <li className="lost"><a href="">Contact</a></li>
+                  <li><a href="">首&nbsp;&nbsp;页</a></li>
+                  <li><a className="active" href="http://127.0.0.1:3000/cakelist">蛋糕名录</a></li>
+
+                  <li><a href="http://127.0.0.1:3000/brandstory">品牌故事</a></li>
+                  <li><a href="http://127.0.0.1:3000/login">个人中心</a></li>
+                  <li><a href="http://127.0.0.1:3000/sinup">注册</a></li>
+                  <li className="lost"><a href="http://127.0.0.1:3000/contact">联系我们</a></li>
                  
                   <div className="clearfix"> </div>
                 </ul>
@@ -23,7 +25,7 @@ class Logo extends Component {
           </div>
           <div className="head-bg">
             <div className="logo three">
-              <a href=""><h1>ONLY <span>LOVE</span>FOR<span>U</span>CAKES</h1></a>
+              <a href=""><h1>ONLY <span>FOR </span>CAKES</h1></a>
             </div>
           </div>
         </div>

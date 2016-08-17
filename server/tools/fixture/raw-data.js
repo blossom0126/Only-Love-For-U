@@ -54,5 +54,9 @@ export default {
     intro:'美国大杏仁片、法国铁塔淡奶油、时令鲜水果',
     style:'彩虹巴黎',
     image:'image/cakelist/08.jpg'
+  }],
+  User:[{
+    username:'wangting',
+    password:'wt1234'
   }]
 };
