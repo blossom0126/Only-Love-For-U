@@ -4,7 +4,7 @@ import request from 'supertest';
 describe('get /cakes', ()=> {
   it('should return  cake arr', (done)=> {
     request(app)
-        .get('/cakes?_=' +Math.random())
+        .get('/cakes?_=' + Math.random())
         .expect([
           {
             '_id': '57b294a280a821c918823b7b',
@@ -72,7 +72,7 @@ describe('get /cakes', ()=> {
           }
         ])
         .end((err)=> {
-          if(err) {
+          if (err) {
             done.fail(err);
           } else {
             done();
@@ -87,19 +87,20 @@ describe('post /users', function () {
     request(app)
         .post('/users')
         .type('form')
-        .send({username:'wangting',
-              password:'wt1234'})
-        .end((err,doc)=> {
-          console.log(doc.body);
+        .send({
+          username: 'wangting',
+          password: 'wt1234'
+        })
+        .end((err, doc)=> {
           let result = {
-            username:doc.body.username,
-            password:doc.body.password
+            username: doc.body.username,
+            password: doc.body.password
           };
           expect(result).toEqual({
             'username': 'wangting',
             'password': 'wt1234',
           });
-          if(err) {
+          if (err) {
             done.fail(err);
           } else {
             done();
