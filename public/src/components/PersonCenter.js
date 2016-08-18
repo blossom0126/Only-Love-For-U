@@ -6,7 +6,10 @@ import Logo from './Logo';
 class PersonCenter extends Component {
   render() {
     return (
-<Logo/>
+        <div>
+        <Logo/>
+        <div>个人中心</div>
+          </div>
 
     );
   }

@@ -5,6 +5,7 @@ import React, {Component} from 'react'; // eslint-disable-line no-unused-vars
 class SignUp extends Component {
 
   addTodo() {
+
     let arr = [];
     let inputn = this.refs.inputName.value.trim();
     let inputp = this.refs.inputPwd.value.trim();
@@ -96,13 +97,17 @@ class SignUp extends Component {
                       ref="rePassword"
                       onKeyPress={this.handleKeyPress.bind(this) }
                       />
+
+                    </div>
+                    <span className="text-danger col-md-3" id="error_repassword"> </span>
                   </div>
-                  <span className="text-danger col-md-3" id="error_repassword"> </span>
-                </div>
-                <div className="col-sm-offset-2 col-sm-10">
-                  <button onClick={this.addTodo.bind(this) } type="button" className="btn btn-default">Create new
-                    account
-                  </button>
+                  <div className="col-sm-offset-2 col-sm-10">
+                    <a href="http://127.0.0.1:3000/login" onClick={this.addTodo.bind(this)} type="button"
+                       className="btn btn-default">Create new
+                      account
+                    </a>
+
+               
                 </div>
               </form>
             </div>

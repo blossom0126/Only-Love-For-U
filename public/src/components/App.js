@@ -1,6 +1,5 @@
 import React, {Component} from 'react';// eslint-disable-line no-unused-vars
 
-import CakeList from '../container/CakeList';
 import Logo from './Logo';
 import SlideShow from './SlideShow';
 
