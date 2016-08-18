@@ -8,6 +8,8 @@ import APP from './components/App';
 import Contact from './components/Contact';
 import AddTodo from './container/AddTodo';
 import cakeList from './reducers';
+import CakeDetail from './components/CakeDetail';
+
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import cakeRequestMiddleware from './middlewares/cakeRequestMiddleware';
@@ -32,6 +34,7 @@ render(
         <Route path="/slideshow" component={Slide}/>
         <Route path="/signup" component={AddTodo}/>
         <Route path="/contact" component={Contact}/>
+        <Route path="/cakedetail" component={CakeDetail}/>
       </Router>
     </Provider>,
     document.getElementById('app')
