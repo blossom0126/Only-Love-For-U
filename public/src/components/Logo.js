@@ -18,8 +18,10 @@ class Logo extends Component {
                 </ul>
 
               </div>
-          
-              
+              <ul className="nav navbar-nav" style={{marginLeft:'70px'}}>
+              <li><a className="loginands" href="http://127.0.0.1:3000/signup">登陆</a></li>
+              <li><a className="loginands" href="http://127.0.0.1:3000/signup">注册</a></li>
+            </ul>
             </div>
           </div>
           <div className="head-bg">
