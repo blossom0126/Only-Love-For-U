@@ -1,4 +1,3 @@
-
 import request from 'superagent';
 const cakeRequestMiddleware = store =>next=>action=> {// eslint-disable-line no-unused-vars
   switch (action.type) {
