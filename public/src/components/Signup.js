@@ -3,17 +3,27 @@
  */
 import React, {Component} from 'react'; // eslint-disable-line no-unused-vars
 class SignUp extends Component {
+  constructor() {
+    super();
+    this.state = {
+      emailResult: false,
+      passwordFormatResult: false,
+      passwordSameResult: false
+    };
+  }
 
   addTodo() {
-    let arr = [];
-    let inputn = this.refs.inputName.value.trim();
-    let inputp = this.refs.inputPwd.value.trim();
-    arr.push(inputn, inputp);
-    if (arr) {
-      this.props.addTodo(arr);
+    if(this.state.emailResult && this.state.passwordFormatResult && this.state.passwordSameResult){
+      let arr = [];
+      let inputn = this.refs.inputName.value.trim();
+      let inputp = this.refs.inputPwd.value.trim();
+      arr.push(inputn, inputp);
+      if (arr) {
+        this.props.addTodo(arr);
+      }
+      this.refs.inputName.value = '';
+      this.refs.inputPwd.value = '';
     }
-    this.refs.inputName.value = '';
-    this.refs.inputPwd.value = '';
   }
 
   handleKeyPress(e) {
@@ -21,6 +31,27 @@ class SignUp extends Component {
       return;
     }
     this.addTodo();
+  }
+
+  checkEmail() {
+    let email = this.refs.inputName.value.trim();
+    let patt = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+$/;
+    this.state.emailResult = patt.test(email);
+    //console.log(this.state.emailResult);
+  }
+
+  checkPasswordFormat() {
+    let password = this.refs.inputPwd.value.trim();
+    let patt = /^.{6,13}$/;
+    this.state.passwordFormatResult = patt.test(password);
+    //console.log(this.state.passwordFormatResult);
+  }
+
+  checkPasswordSame() {
+    let password = this.refs.inputPwd.value.trim();
+    let password_2 = this.refs.rePassword.value.trim();
+    this.state.passwordSameResult = (password === password_2);
+    //console.log(this.state.passwordSameResult);
   }
 
   render() {
@@ -65,6 +96,7 @@ class SignUp extends Component {
                              placeholder="Please input username"
                              ref="inputName"
                              onKeyPress={this.handleKeyPress.bind(this)}
+                             onBlur={this.checkEmail.bind(this)}
                       />
                     </div>
                     <span className="text-danger col-md-3" id="error_show"> </span>
@@ -79,6 +111,7 @@ class SignUp extends Component {
                              placeholder="Please input password"
                              ref="inputPwd"
                              onKeyPress={this.handleKeyPress.bind(this)}
+                             onBlur={this.checkPasswordFormat.bind(this)}
                       />
                     </div>
                     <span className="text-danger col-md-3" id="error_password"> </span>
@@ -93,6 +126,7 @@ class SignUp extends Component {
                              placeholder="Please input password again"
                              ref="rePassword"
                              onKeyPress={this.handleKeyPress.bind(this)}
+                             onBlur={this.checkPasswordSame.bind(this)}
                       />
                     </div>
                     <span className="text-danger col-md-3" id="error_repassword"> </span>
