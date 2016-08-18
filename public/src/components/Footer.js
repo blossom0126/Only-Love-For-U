@@ -5,6 +5,7 @@ import React, {Component} from 'react';// eslint-disable-line no-unused-vars
 class Footer extends Component {
   render() {
     return (
+        <div>
         <div className="footer">
           <div className="container">
             <div className="col-md-3 footer-grid">
@@ -40,17 +41,12 @@ class Footer extends Component {
             </div>
             <div className="col-md-3 footer-grid">
               <h4>SUPPORT WITH</h4>
-              <div className="support">
-                <input type="text" className="text"
-                       value="Enter email to reset it"
-                       onFocus="this.value = '';"
-                       onBlur="if (this.value == 'Enter email to reset it') {this.value = 'Enter email to reset it';}"/>
-                <input type="submit" value="SUBMIT" className="botton"/>
-              </div>
+
             </div>
             <div className="clearfix"></div>
           </div>
         </div>
+          </div>
     );
   }
 }

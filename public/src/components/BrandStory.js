@@ -7,8 +7,10 @@ import Logo from './Logo';
 class BrandStory extends Component {
   render() {
     return (
-        <BrandStory/>
-
+        <div>
+          <Logo/>
+          <BrandStory/>
+        </div>
     );
   }
 }

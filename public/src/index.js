@@ -5,11 +5,11 @@ import BrandStory from './components/BrandStory';
 import Login from './container/LogIn';
 import Slide from './components/SlideShow';
 import APP from './components/App';
+import Person from './components/PersonCenter';
 import Contact from './components/Contact';
 import AddTodo from './container/AddTodo';
 import cakeList from './reducers';
 import CakeDetail from './components/CakeDetail';
-
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import cakeRequestMiddleware from './middlewares/cakeRequestMiddleware';
@@ -34,6 +34,7 @@ render(
         <Route path="/brandstory" component={BrandStory}/>
         <Route path="/slideshow" component={Slide}/>
         <Route path="/signup" component={AddTodo}/>
+        <Route path="/personcenter" component={Person}/>
         <Route path="/contact" component={Contact}/>
         <Route path="/cakedetail" component={CakeDetail}/>
       </Router>

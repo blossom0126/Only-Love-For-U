@@ -3,6 +3,7 @@
  */
 /*wang genwang*/
 import React, {Component} from 'react'; // eslint-disable-line no-unused-vars
+import Logo from './Logo';
 class SignUp extends Component {
   constructor() {
     super();
@@ -67,40 +68,16 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div className="header">
-        <div className="header-top">
+
+<div>
+  <Logo/>
           <div className="container">
-            <div className="top-nav">
-              <span className="menu two"> </span>
-              <ul>
-                <li><a href="http://127.0.0.1:3000">首&nbsp; &nbsp; 页</a></li>
-                <li><a className="active" href="http://127.0.0.1:3000/cakelist">蛋糕名录</a></li>
-
-                <li><a href="http://127.0.0.1:3000/brandstory">品牌故事</a></li>
-                <li><a href="http://127.0.0.1:3000/login">个人中心</a></li>
-                <li><a href="http://127.0.0.1:3000/signup">注册</a></li>
-                <li className="lost"><a href="http://127.0.0.1:3000/contact">联系我们</a></li>
-
-                <div className="clearfix"></div>
-              </ul>
-            </div>
-            <div className="clearfix"></div>
-          </div>
-          <div className="clearfix"></div>
-        </div>
-        <div className="head-bg">
-          <div className="logo three">
-            <a href=""><h1>ONLY <span>FOR </span>CAKES</h1></a>
-          </div>
-        </div>
-
-          <div className="container">
-            <div className="col-md-10 col-">
-              <div className="col-md-6 ">
+            <div className="col-md-10">
+              <div className="col-md-8 ">
                 <form action="#" className="form-horizontal col-md-12">
                   <div className="form-group">
-                    <label htmlFor="inputEmail3" className="col-sm-3 col-md-3 control-label">Username:</label>
-                    <div className="col-sm-6 col-md-6">
+                    <label htmlFor="inputEmail3" className="col-md-3 col-md-6 control-label">Username:</label>
+                    <div className="col-md-5 col-md-6">
                       <input type="email"
                              className="form-control"
                              id="inputEmail3"
@@ -110,12 +87,12 @@ class SignUp extends Component {
                              onBlur={this.checkEmail.bind(this)}
                       />
                     </div>
-                    <span className="text-danger col-md-3" ref="emailWrongMessage" > </span>
+                    <span className="text-danger col-md-4" ref="emailWrongMessage" > </span>
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="inputEmail3" className="col-sm-3 col-md-3 control-label">Password:</label>
-                    <div className="col-sm-6 col-md-6">
+                    <label htmlFor="inputEmail3" className="col-md-3 col-md-6 control-label">Password:</label>
+                    <div className="col-md-5 col-md-6">
                       <input type="password"
                              className="form-control"
                              id="inputEmail3"
@@ -125,12 +102,12 @@ class SignUp extends Component {
                              onBlur={this.checkPasswordFormat.bind(this)}
                       />
                     </div>
-                    <span className="text-danger col-md-3" ref='passwordWrongFormat' > </span>
+                    <span className="text-danger col-md-4" ref='passwordWrongFormat' > </span>
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="inputEmail3" className="col-sm-3 col-md-3 control-label">RePassword</label>
-                    <div className="col-sm-6 col-md-6">
+                    <label htmlFor="inputEmail3" className="col-md-3 col-md-6 control-label">RePassword:</label>
+                    <div className="col-md-5 col-md-6">
                       <input type="password"
                              className="form-control"
                              id="inputEmail3"
@@ -141,9 +118,9 @@ class SignUp extends Component {
                       />
 
                     </div>
-                    <span className="text-danger col-md-3" ref='passwordWrongSame' > </span>
+                    <span className="text-danger col-md-4" ref='passwordWrongSame' > </span>
                   </div>
-                  <div className="col-sm-offset-2 col-sm-10">
+                  <div className="col-md-offset-4 col-sm-10">
                     <a href="http://127.0.0.1:3000/login" onClick={this.addTodo.bind(this)} type="button"
                        className="btn btn-default">Create new
                       account
