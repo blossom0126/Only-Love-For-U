@@ -8,7 +8,6 @@ import APP from './components/App';
 import Contact from './components/Contact';
 import AddTodo from './container/AddTodo';
 import cakeList from './reducers';
-
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import cakeRequestMiddleware from './middlewares/cakeRequestMiddleware';

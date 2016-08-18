@@ -2,11 +2,13 @@ import express from 'express';
 import User from '../models/User';
 let router = express.Router();
 router.post('/', (req, res, next)=> {
+  //console.log(req.body);
   new User({
     username: req.body.username,
-    password:req.body.password
+    password: req.body.password
   }).save((err,data) => {
     if(!err) {
+      
       res.send(data);
     }
     return next(err);
