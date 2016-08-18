@@ -1,12 +1,17 @@
+/**
+ * Created by wt on 16-8-18.
+ */
+
 import React, {Component} from 'react'; // eslint-disable-line no-unused-vars
 class LogIn extends Component {
   doAction() {
-    let arr = [];
+    let arr={};
     let inputn = this.refs.inputName.value.trim();
     let inputp = this.refs.inputPwd.value.trim();
-    arr.push(inputn, inputp);
+    arr['username']=inputn;
+    arr['password']=inputp;
     if (arr) {
-      this.props.addTodo(arr);
+      this.props.LogIna(arr);
     }
     this.refs.inputName.value = '';
     this.refs.inputPwd.value = '';
@@ -16,7 +21,7 @@ class LogIn extends Component {
     if (13 !== e.charCode) {
       return;
     }
-    this.addTodo();
+    this.doAction();
   }
   render() {
     return (
@@ -51,7 +56,8 @@ class LogIn extends Component {
                     <span className="text-danger col-md-3" id="error_show"> </span>
                  </div>
                   <div className="col-sm-offset-2 col-sm-10">
-                    <button onClick={this.addTodo.bind(this)} type="button" className="btn btn-default">登录
+                    <button onClick={this.doAction.bind(this)} type="button" className="btn btn-default">Create new
+                      account
                     </button>
                   </div>
                 </form>
@@ -61,4 +67,4 @@ class LogIn extends Component {
     );
   }
 }
-module.exports=LogIn;
+export default LogIn;

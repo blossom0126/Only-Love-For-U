@@ -43,8 +43,8 @@ class Footer extends Component {
               <div className="support">
                 <input type="text" className="text"
                        value="Enter email to reset it"
-                       onfocus="this.value = '';"
-                       onblur="if (this.value == 'Enter email to reset it') {this.value = 'Enter email to reset it';}"/>
+                       onFocus="this.value = '';"
+                       onBlur="if (this.value == 'Enter email to reset it') {this.value = 'Enter email to reset it';}"/>
                 <input type="submit" value="SUBMIT" className="botton"/>
               </div>
             </div>

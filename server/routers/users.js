@@ -1,44 +1,38 @@
-import express fr om 'express';
+import express from 'express';
 import User from '../models/User';
 let router = express.Router();
 
 
-router.post('/', (req, res,next)=> {
+router.post('/', (req, res, next)=> {
   new User({
     username: req.body.username,
     password: req.body.password
-  }).save((err,data) => {
+  }).save((err, data) => {
     if (err) {
       return next(err);
-    } 
-    else{
-
+    }
+    else {
       res.send(data);
     }
   });
 });
 
-
-router.get('/', (req, res) => {
-  User.find((err, data) => {
-    res.send(data);
-  });
-
-  router.get('/', (req, res) => {
-    User.findOne({ username: req.params.name }, (err, data) => {
-      if (data.username) {
-        if (data.body.password === req.body.password) {
-          res.send('登录成功');
+router.post('/login', (req, res) => {
+  console.log(req.body);
+  User.findOne({username: req.body.username},
+      (err, data) => {
+        if (data) {
+          // res.send(data.password===req.body.password)
+          if (data.password === req.body.password) {
+            // req.session.name = req.body.username;
+            res.send(true);
+          }
         }
         else {
-          res.send('密码不正确');
+          res.send(false);
         }
-      }
-      else {
-        res.send('该用户不存在');
-      }
-    });
-  });
+
+      });
 });
 
 module.exports = router;
