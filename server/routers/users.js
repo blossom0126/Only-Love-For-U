@@ -1,4 +1,4 @@
-import express from 'express';
+import express fr om 'express';
 import User from '../models/User';
 let router = express.Router();
 
