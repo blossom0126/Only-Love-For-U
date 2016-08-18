@@ -14,6 +14,8 @@ class SignUp extends Component {
     }
     this.refs.inputName.value = '';
     this.refs.inputPwd.value = '';
+    this.refs.rePassword.value ='';
+
   }
 
   handleKeyPress(e) {
@@ -53,12 +55,12 @@ class SignUp extends Component {
           </div>
 
           <div className="container">
-            <div className="col-md-10 col-">
+            <div className="col-md-10">
               <div className="col-md-6 ">
                 <form action="#" className="form-horizontal col-md-12">
                   <div className="form-group">
-                    <label htmlFor="inputEmail3" className="col-sm-3 col-md-2 control-label">Username:</label>
-                    <div className="col-sm-6 col-md-7">
+                    <label htmlFor="inputEmail3" className="col-sm-3 col-md-3 control-label">Username:</label>
+                    <div className="col-sm-6 col-md-6">
                       <input type="email"
                              className="form-control"
                              id="inputEmail3"
@@ -71,8 +73,8 @@ class SignUp extends Component {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="inputEmail3" className="col-sm-3 col-md-2 control-label">Password:</label>
-                    <div className="col-sm-6 col-md-7">
+                    <label htmlFor="inputEmail3" className="col-sm-3 col-md-3 control-label">Password:</label>
+                    <div className="col-sm-6 col-md-6">
                       <input type="password"
                              className="form-control"
                              id="inputEmail3"
@@ -85,8 +87,8 @@ class SignUp extends Component {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="inputEmail3" className="col-sm-3 col-md-2 control-label">RePassword</label>
-                    <div className="col-sm-6 col-md-7">
+                    <label htmlFor="inputEmail3" className="col-sm-3 col-md-3 control-label">RePassword:</label>
+                    <div className="col-sm-6 col-md-6">
                       <input type="password"
                              className="form-control"
                              id="inputEmail3"
