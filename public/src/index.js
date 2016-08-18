@@ -7,7 +7,7 @@ import Slide from './components/SlideShow';
 import APP from './components/App';
 import Contact from './components/Contact';
 import AddTodo from './container/AddTodo';
-import cakeList from './reducers/index';
+import cakeList from './reducers';
 import CakeDetail from './components/CakeDetail';
 
 import {createStore, applyMiddleware} from 'redux';

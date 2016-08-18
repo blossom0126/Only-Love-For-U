@@ -6,7 +6,6 @@ import CakeList from '../container/CakeList';
 import Logo from './Logo';
 import Footer from './Footer';
 
-
 class CakesList extends Component {
   render() {
     return (
