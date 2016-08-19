@@ -9,17 +9,11 @@ class LogIn extends Component {
     let arr = {};
     let inputn = this.refs.inputName.value.trim();
     let inputp = this.refs.inputPwd.value.trim();
-    arr['username'] = inputn;
-    arr['password'] = inputp;
-    if (arr) {
-      this.props.LogIna(arr);
-    }
+    arr.username = inputn;
+    arr.password = inputp;
+    this.props.LogIna(arr);
     this.refs.inputName.value = '';
     this.refs.inputPwd.value = '';
-  }
-
-  showerror(data) {
-    this.refs.errorshow.innerHTML = data;
   }
 
   handleKeyPress(e) {
@@ -29,49 +23,48 @@ class LogIn extends Component {
     this.doAction();
   }
   render() {
+    const user = this.props.user;
     return (
-      <div>
+        <div>
         <Logo/>
         <div className="container">
-          <div className="col-md-10">
-            <div className="col-md-10 ">
-              <form action="#" className="form-horizontal col-md-12">
-                <div className="form-group">
-                  <label htmlFor="inputEmail3" className="col-md-3 col-md-6 control-label">Username: </label>
-                  <div className="col-md-5 col-md-6">
-                    <input type="text"
-                      className="form-control"
-                      id="inputEmail3"
-                      placeholder="Please input username"
-                      ref="inputName"
-                      onKeyPress={this.handleKeyPress.bind(this) }
+            <div className="col-md-10">
+              <div className="col-md-10 ">
+                <form action="#" className="form-horizontal col-md-12">
+                  <div className="form-group">
+                    <label htmlFor="inputEmail3" className="col-md-3 col-md-6 control-label">Username:</label>
+                    <div className="col-md-5 col-md-6">
+                      <input type="text"
+                             className="form-control"
+                             id="inputEmail3"
+                             placeholder="Please input username"
+                             ref="inputName"
+                             onKeyPress={this.handleKeyPress.bind(this)}
                       />
+                    </div>
+                    <span className="text-danger col-md-4" id="error_show" >{user}</span>
                   </div>
-                  <span className="text-danger col-md-4" ref="errorshow"> </span>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="inputEmail3" className="col-md-3 col-md-6 control-label">Password: </label>
-                  <div className="col-md-5 col-md-6">
+                  <div className="form-group">
+                    <label htmlFor="inputEmail3" className="col-md-3 col-md-6 control-label">Password:</label>
+                    <div className="col-md-5 col-md-6">
                     <input type="Password"
-                      className="form-control"
-                      id="inputEmail3"
-                      placeholder="Please input password"
-                      ref="inputPwd"
-                      onKeyPress={this.handleKeyPress.bind(this) }
-                      />
+                           className="form-control"
+                           id="inputEmail3"
+                           placeholder="Please input password"
+                           ref="inputPwd"
+                           onKeyPress={this.handleKeyPress.bind(this)}
+                    />
+                    </div>
+                 </div>
+                  <div className="col-lg-offset-6 col-sm-5">
+                    <button onClick={this.doAction.bind(this)} type="button" className="btn btn-default"> Login Now
+                    </button>
                   </div>
-                  <span className="text-danger col-md-4">
-                  </span>
-                </div>
-                <div className="col-lg-offset-6 col-sm-5">
-                  <button onClick={this.doAction.bind(this) } type="button" className="btn btn-default"> Login Now
-                  </button>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     );
   }
 }

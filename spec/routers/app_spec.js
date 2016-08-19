@@ -146,4 +146,3 @@ describe('post /users/login', function () {
   });
 });
 
-
