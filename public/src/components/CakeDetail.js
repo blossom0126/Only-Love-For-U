@@ -2,7 +2,7 @@
  * Created by hanyile on 16/8/18.
  */
 
-import React, { Component } from 'react';// eslint-disable-line no-unused-lets
+import React, {Component} from 'react';// eslint-disable-line no-unused-vars
 import Logo from './Logo';
 import Footer from './Footer';
 import request from 'superagent';
@@ -11,17 +11,17 @@ import {loadCakeDetail} from '../actions/index';
 
 class CakeDetailClass extends Component {
 
-    constructor () {
-        super(props);
-    }
+  constructor() {
+    super(props);
+  }
 
-    componentDidMount() {
-        request
-            .get(`/cakedetail/${this.props.params.id}`)
-            .end((err, res)=> {
-                this.props.getCakeDetail(res.body);
-            });
-    }
+  componentDidMount() {
+    request
+        .get(`/cakedetail/${this.props.params.id}`)
+        .end((err, res)=> {
+          this.props.getCakeDetail(res.body);
+        });
+  }
 
   render() {
     return (
@@ -35,13 +35,13 @@ class CakeDetailClass extends Component {
 }
 
 let mapStateToProps = (state)=> {
-    return state;
+  return state;
 };
 
 let mapDispatchToProps = (dispatch) => ({
-    getCakeDetail: (data)=> {
-        dispatch(loadCakeDetail(data));
-    }
+  getCakeDetail: (data)=> {
+    dispatch(loadCakeDetail(data));
+  }
 });
 
 

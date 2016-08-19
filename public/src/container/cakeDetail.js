@@ -6,15 +6,15 @@ import {connect} from 'react-redux';
 import {getItemId} from '../actions/index';
 
 const mapStateToProps = (state) => {
-    return state;
+  return state;
 };
 
 
 const mapDispatchToProps = (dispatch)=> ({
-    getId: (id)=> {
+  getId: (id)=> {
 
-        dispatch(getItemId(id));
-    }
+    dispatch(getItemId(id));
+  }
 });
 
 const MenuList = connect(mapStateToProps, mapDispatchToProps);
