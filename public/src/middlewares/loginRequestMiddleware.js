@@ -1,24 +1,29 @@
 import request from 'superagent';
 import {browserHistory} from 'react-router';
-
-const loginRequestMiddleware = store =>next=>action=> {// eslint-disable-line no-unused-vars
+import Login from '../components/Login';
+const loginRequestMiddleware = store => next => action => {// eslint-disable-line no-unused-vars
   switch (action.type) {
-  case 'LoginVaild':
+  case 'LoginValid':
     request.post('/users/login')
         .type('form')
         .send({
           username: action.text.username,
           password: action.text.password
         })
-        .end((err, res)=> {
+        .end((err, res) => {
           if (res.body) {
             browserHistory.push('/');
           }
           else {
-            alert('失败');
+            next({
+              type: 'LoginFailed',
+              data: 'input error~'
+            });
           }
-
         });
+    break;
+  case 'LoginFailed':
+    Login.showerror(action.data);
     break;
   }
   next(action);
