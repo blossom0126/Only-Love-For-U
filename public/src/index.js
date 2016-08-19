@@ -14,10 +14,11 @@ import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import cakeRequestMiddleware from './middlewares/cakeRequestMiddleware';
 import todoRequestMiddleware from './middlewares/todoRequestMiddleware';
+import cakeDetailRequestMiddleware from './middlewares/cakeDetailRequestMiddleware';
 import {Router, Route, browserHistory} from 'react-router';
 const store = createStore(
     cakeList,
-    applyMiddleware(cakeRequestMiddleware, todoRequestMiddleware)
+    applyMiddleware(cakeRequestMiddleware, todoRequestMiddleware, cakeDetailRequestMiddleware)
 );
 
 store.dispatch({
@@ -34,7 +35,7 @@ render(
         <Route path="/slideshow" component={Slide}/>
         <Route path="/signup" component={AddTodo}/>
         <Route path="/contact" component={Contact}/>
-        <Route path="/cakedetail" component={CakeDetail}/>
+        <Route path="/cakedetail/:id" component={CakeDetail}/>
       </Router>
     </Provider>,
     document.getElementById('app')
