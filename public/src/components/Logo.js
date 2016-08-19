@@ -1,4 +1,5 @@
 import React, {Component} from 'react';// eslint-disable-line no-unused-vars
+import {Link} from 'react-router';
 
 class Logo extends Component {
   render() {
@@ -9,18 +10,17 @@ class Logo extends Component {
               <div className="top-nav">
                 <span className="menu two"> </span>
                 <ul>
-                  <li><a href="http://127.0.0.1:3000">首&nbsp;&nbsp;页</a></li>
-                  <li><a className="active" href="http://127.0.0.1:3000/cakelist">蛋糕名录</a></li>
-
-                  <li><a href="http://127.0.0.1:3000/brandstory">品牌故事</a></li>
-                  <li><a href="http://127.0.0.1:3000/personcenter">个人中心</a></li>
-                  <li className="lost"><a href="http://127.0.0.1:3000/contact">联系我们</a></li>
+                  <li><Link to="/">首&nbsp;&nbsp;页</Link></li>
+                  <li><Link className="active" to="/cakelist">蛋糕名录</Link></li>
+                  <li><Link to="/exclusive">唯依专区</Link></li>
+                  <li><Link to="brandstory">品牌故事</Link></li>
+                  <li className="lost"><Link to="/contact">联系我们</Link></li>
                 </ul>
 
               </div>
               <ul className="nav navbar-nav" style={{marginLeft:'70px'}}>
-              <li><a className="loginands" href="http://127.0.0.1:3000/login">登陆</a></li>
-              <li><a className="loginands" href="http://127.0.0.1:3000/signup">注册</a></li>
+              <li><Link className="loginands" to="/login">登录</Link></li>
+              <li><Link className="loginands" to="/signup">注册</Link></li>
             </ul>
             </div>
           </div>

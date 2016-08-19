@@ -2,9 +2,9 @@ import React, {Component} from 'react';// eslint-disable-line no-unused-vars
 
 class CakeItem extends Component {
 
-    click() {
-        this.props.getId(this.props.key);
-    }
+  click() {
+    this.props.getId(this.props.key);
+  }
 
   render() {
     let {name, image, style, intro, id} = this.props;

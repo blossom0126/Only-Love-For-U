@@ -9,10 +9,10 @@ class BrandStory extends Component {
     return (
         <div>
           <Logo/>
-          <BrandStory/>
+         
         </div>
     );
   }
 }
-export default Logo;
+export default BrandStory;
 

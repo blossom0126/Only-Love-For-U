@@ -23,7 +23,7 @@ class SlideShow extends Component {
   }
 
   render() {
-    let address = ['image/slideShow/slide.01.jpg', 'image/slideShow/slide.02.jpg', 'image/slideShow/slide.03.jpg', 'image/slideShow/slide.04.jpg', 'image/slideShow/slide.05.jpg'];
+    let address = ['image/slideShow/slide.01.jpg', 'image/slideShow/slide.02.jpg', 'image/slideShow/slide.03.jpg', 'image/slideShow/slide.05.jpg', 'image/slideShow/slide.04.jpg'];
     return (
 
       <div>

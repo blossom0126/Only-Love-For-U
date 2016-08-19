@@ -11,7 +11,7 @@ import {loadCakeDetail} from '../actions/index';
 
 class CakeDetailClass extends Component {
 
-  constructor() {
+  constructor(props) {
     super(props);
   }
 

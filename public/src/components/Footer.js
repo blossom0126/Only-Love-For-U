@@ -2,6 +2,7 @@
  * Created by jae on 16-8-17.
  */
 import React, {Component} from 'react';// eslint-disable-line no-unused-vars
+import {Link} from 'react-router';
 class Footer extends Component {
   render() {
     return (
@@ -17,13 +18,12 @@ class Footer extends Component {
               <div className="bottom-nav">
                 <h4>LEARN</h4>
                 <ul>
-                  <li><a className="active" href="http://127.0.0.1:3000">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
-                  <li className="lost"><a href="http://127.0.0.1:3000/contact">联系我们</a></li>
-                  <li><a href="http://127.0.0.1:3000/cakelist">蛋糕名录</a></li>
-                  <li><a href="http://127.0.0.1:3000/exclusive">唯依专区</a></li>
-                  <li><a href="http://127.0.0.1:3000/brandstory">品牌故事</a></li>
-                  <li><a href="http://127.0.0.1:3000/login">个人中心</a></li>
-                  <li><a href="http://127.0.0.1:3000/contact">联系我们</a></li>
+                  <li><Link className="active" to="/">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</Link></li>
+                  <li className="lost"><Link to="/contact">联系我们</Link></li>
+                  <li><Link to="/cakelist">蛋糕名录</Link></li>
+                  <li><Link to="/exclusive">唯依专区</Link></li>
+                  <li><Link to="/brandstory">品牌故事</Link></li>
+                  <li><Link to="/contact">联系我们</Link></li>
                   <div className="clearfix"></div>
                 </ul>
               </div>
