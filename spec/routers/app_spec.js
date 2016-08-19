@@ -1,6 +1,6 @@
 import app from '../../app';
 import request from 'supertest';
-/*global describe,it*/
+/*global describe,it,expect*/
 describe('get /cakes', ()=> {
   it('should return  cake arr', (done)=> {
     request(app)
@@ -88,7 +88,7 @@ describe('post /users', function () {
         .post('/users')
         .type('form')
         .send({
-          username: 'wangting',
+          username: 'wangting@163.com',
           password: 'wt1234'
         })
         .end((err, doc)=> {
@@ -97,7 +97,7 @@ describe('post /users', function () {
             password: doc.body.password
           };
           expect(result).toEqual({
-            'username': 'wangting',
+            'username': 'wangting@163.com',
             'password': 'wt1234',
           });
           if (err) {
@@ -108,4 +108,42 @@ describe('post /users', function () {
         });
   });
 });
+
+describe('post /users/login', function () {
+  it('should get valid input true', (done)=> {
+    request(app)
+        .post('/users/login')
+        .type('form')
+        .send({
+          username: 'wangting@163.com',
+          password: 'wt1234'
+        })
+        .end((err, doc)=> {
+          expect(doc.body).toEqual(true);
+          if (err) {
+            done.fail(err);
+          } else {
+            done();
+          }
+        });
+  });
+  it('should get valid input false', (done)=> {
+    request(app)
+        .post('/users/login')
+        .type('form')
+        .send({
+          username: 'wangting111',
+          password: 'wt1234'
+        })
+        .end((err, doc)=> {
+          expect(doc.body).toEqual(false);
+          if (err) {
+            done.fail(err);
+          } else {
+            done();
+          }
+        });
+  });
+});
+
 

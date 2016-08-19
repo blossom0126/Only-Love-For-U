@@ -1,6 +1,6 @@
 import request from 'superagent';
 import {browserHistory} from 'react-router';
-import Login from '../components/Login';
+import Login from '../components/LogIn';
 const loginRequestMiddleware = store => next => action => {// eslint-disable-line no-unused-vars
   switch (action.type) {
   case 'LoginValid':
