@@ -14,6 +14,7 @@ class Cake extends Component {
           {
             cake.map((v, k)=> (
                 <CakeItem key={k}
+                          id={v._id}
                           name={v.name}
                           image={v.image}
                           price={v.price}
