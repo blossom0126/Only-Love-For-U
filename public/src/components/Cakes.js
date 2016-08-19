@@ -7,8 +7,10 @@ import CakeItem from './CakeItem';
 class Cake extends Component {
   render() {
     const {cake}=this.props;
+    //console.log(this.props.cake);
     return (
         <div className="row">
+
           {
             cake.map((v, k)=> (
                 <CakeItem key={k}

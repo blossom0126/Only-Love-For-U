@@ -4,7 +4,7 @@ class CakeItem extends Component {
   render() {
     let {name, image, style,intro} = this.props;
     return (
-        <div class="row">
+        <div>
           <div className="text-center col-xs-6 col-md-3">
             <a href="#" className="text-center thumbnail">
               <img src={image} title={intro}  />

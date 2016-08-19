@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SignUp from '../components/Signup';
-import { addTodo } from '../actions';
+import { addTodo } from '../actions/index';
 
 const mapStateToProps = (state)=> (state);
 const mapDispatchToProps = (dispatch)=> ({
