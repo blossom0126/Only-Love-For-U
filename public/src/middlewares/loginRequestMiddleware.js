@@ -15,9 +15,11 @@ const loginRequestMiddleware = store =>next=>action=> {// eslint-disable-line no
             browserHistory.push('/');
           }
           else {
-            alert('失败');
+            next({
+              type: 'LOGIN_FAIR',
+              data: '登陆失败，请重试'
+            });
           }
-
         });
     break;
   }

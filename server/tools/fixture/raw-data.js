@@ -56,7 +56,7 @@ export default {
     image:'image/cakelist/08.jpg'
   }],
   User:[{
-    username:'wangting',
+    username:'wangting@163.com',
     password:'wt1234'
   }]
 };

@@ -121,11 +121,10 @@ class SignUp extends Component {
                     <span className="text-danger col-md-4" ref='passwordWrongSame' > </span>
                   </div>
                   <div className="col-md-offset-4 col-sm-10">
-                    <a href="http://127.0.0.1:3000/login" onClick={this.addTodo.bind(this)} type="button"
+                    <button onClick={this.addTodo.bind(this)} type="button"
                        className="btn btn-default">Create new
                       account
-                    </a>
-
+                    </button>
                 </div>
               </form>
             </div>

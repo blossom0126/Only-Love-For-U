@@ -13,7 +13,6 @@ const mapDispatchToProps = (dispatch)=> {
       dispatch(LoginVaild(arr));
     }
   };
-
 };
 
 var connect2 = connect(mapStateToProps, mapDispatchToProps);

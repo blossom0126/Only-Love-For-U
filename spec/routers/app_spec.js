@@ -109,3 +109,39 @@ describe('post /users', function () {
   });
 });
 
+describe('post /users/login', function () {
+  it('should get valid input true', (done)=> {
+    request(app)
+        .post('/users/login')
+        .type('form')
+        .send({
+          username: 'wangting@163.com',
+          password: 'wt1234'
+        })
+        .end((err, doc)=> {
+          expect(doc.body).toEqual(true);
+          if (err) {
+            done.fail(err);
+          } else {
+            done();
+          }
+        });
+  });
+  it('should get valid input false', (done)=> {
+    request(app)
+        .post('/users/login')
+        .type('form')
+        .send({
+          username: 'wangting111',
+          password: 'wt1234'
+        })
+        .end((err, doc)=> {
+          expect(doc.body).toEqual(false);
+          if (err) {
+            done.fail(err);
+          } else {
+            done();
+          }
+        });
+  });
+});

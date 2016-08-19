@@ -2,37 +2,40 @@ import express from 'express';
 import User from '../models/User';
 let router = express.Router();
 
-
-router.post('/', (req, res, next)=> {
+router.post('/', (req, res,next)=> {
   new User({
     username: req.body.username,
     password: req.body.password
-  }).save((err, data) => {
+  }).save((err,data) => {
     if (err) {
       return next(err);
-    }
-    else {
+    } 
+    else{
       res.send(data);
     }
   });
 });
 
 router.post('/login', (req, res) => {
-  console.log(req.body);
   User.findOne({username: req.body.username},
       (err, data) => {
         if (data) {
           // res.send(data.password===req.body.password)
           if (data.password === req.body.password) {
             // req.session.name = req.body.username;
+            // console.log(req.session);
+            // res.send({name: req.session.name});
             res.send(true);
+          }
+          else{
+            res.send(false);
           }
         }
         else {
           res.send(false);
         }
-
       });
 });
+
 
 module.exports = router;
