@@ -2,7 +2,6 @@ import express from 'express';
 import User from '../models/User';
 let router = express.Router();
 
-
 router.post('/', (req, res,next)=> {
   const username = req.body.username;
   const password = req.body.password;

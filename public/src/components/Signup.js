@@ -18,7 +18,8 @@ class SignUp extends Component {
     let arr = [];
     let inputn = this.refs.inputName.value.trim();
     let inputp = this.refs.inputPwd.value.trim();
-    arr.push(inputn, inputp);
+    let inputre = this.refs.rePassword.value.trim();
+    arr.push(inputn, inputp, inputre);
     if (arr) {
       this.props.addTodo(arr);
     }
