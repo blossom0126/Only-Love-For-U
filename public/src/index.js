@@ -1,21 +1,26 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import {render} from 'react-dom';
+import {Router, Route, browserHistory} from 'react-router';
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
+
+import cakeList from './reducers';
+
+import Login from './container/LogIn';
+import AddTodo from './container/AddTodo';
+import CakeDetailContainer from './container/CakeDetailContainer';
+
 import CakesList from './components/CakeList';
 import BrandStory from './components/BrandStory';
-import Login from './container/LogIn';
 import Slide from './components/SlideShow';
 import APP from './components/App';
 import Contact from './components/Contact';
-import AddTodo from './container/AddTodo';
-import cakeList from './reducers';
-import CakeDetail from './components/CakeDetail';
-import {createStore, applyMiddleware} from 'redux';
-import {Provider} from 'react-redux';
+
 import cakeRequestMiddleware from './middlewares/cakeRequestMiddleware';
 import todoRequestMiddleware from './middlewares/todoRequestMiddleware';
-import cakeDetailRequestMiddleware from './middlewares/cakeDetailRequestMiddleware';
+import cakeDetailRequestMiddleware from './middlewares/CakeDetailRequestMiddleware';
 import loginRequestMiddleware from './middlewares/loginRequestMiddleware';
-import {Router, Route, browserHistory} from 'react-router';
+
 const store = createStore(
     cakeList,
     applyMiddleware(cakeRequestMiddleware, loginRequestMiddleware, todoRequestMiddleware, cakeDetailRequestMiddleware)
@@ -35,7 +40,7 @@ render(
         <Route path="/slideshow" component={Slide}/>
         <Route path="/signup" component={AddTodo}/>
         <Route path="/contact" component={Contact}/>
-        <Route path="/cakedetail/:id" component={CakeDetail}/>
+        <Route path="/cakedetail/:id" component={CakeDetailContainer}/>
       </Router>
     </Provider>,
     document.getElementById('app')
