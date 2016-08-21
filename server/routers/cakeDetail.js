@@ -3,7 +3,7 @@
  */
 
 import express from 'express';
-//import Cake from '../models/Cake';
+import Cake from '../models/Cake';
 
 let router = express.Router();
 
@@ -15,10 +15,10 @@ let router = express.Router();
 // });
 
 //获取蛋糕详情页的URI并返回结果
-/*router.get('/:id', (req, res)=> {
+router.get('/:id', (req, res)=> {
   Cake.findOne({_id: req.params.id}, (err, doc)=> {
     res.send(doc);
   });
-});*/
+});
 
 module.exports = router;
