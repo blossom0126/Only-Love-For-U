@@ -18,4 +18,4 @@ export const LoadCakeDetail = (data)=> {
 
 export const CAKEDETAIL_LOADED = 'CAKEDETAIL_LOADED';
 export const ID_GETTER = 'ID_GETTER';
-export const INIT_CAKEDETAIL = 'INIT_CAKEDETAIL';
+export const INIT_CAKEDETAIL = 'INIT_MENUDETAIL';
