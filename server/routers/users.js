@@ -1,8 +1,13 @@
 import express from 'express';
 import User from '../models/User';
-let router = express.Router();
+import LoginCookie from '../models/LoginCookie';
+import cookieParser from 'cookie-parser';
+import uuid from 'node-uuid';
 
-router.post('/', (req, res,next)=> {
+let router = express.Router();
+router.use(cookieParser());
+
+router.post('/', (req, res, next)=> {
   const username = req.body.username;
   const password = req.body.password;
   const rePassword = req.body.rePassword;
@@ -13,57 +18,67 @@ router.post('/', (req, res,next)=> {
     let patt = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+$/;
     return patt.test(username);
   }
+
   function checkPassword(password) {
     let patt = /^.{6,13}$/;
     return patt.test(password);
   }
-  function checkPasswordSame(password,rePassword) {
+
+  function checkPasswordSame(password, rePassword) {
     return password === rePassword;
   }
 
-  User.findOne({ username: username }, (err, data) => {
+  User.findOne({username: username}, (err, data) => {
     if (data) {
-      res.send({error:'用户已存在'});
+      res.send({error: '用户已存在'});
     }
     else {
-      if(checkUsername(username)&&checkPassword(password)&&checkPasswordSame(password,rePassword)){
+      if (checkUsername(username) && checkPassword(password) && checkPasswordSame(password, rePassword)) {
         new User({
           username: req.body.username,
           password: req.body.password
-        }).save((err,data) => {
+        }).save((err, data)=> {
           if (err) {
             return next(err);
-          }
-          else{
-            res.send({data:data});
+          } else {
+            res.send({data: data});
           }
         });
+      } else {
+        res.send({error: 'input information error!'});
       }
-      else
-        res.send({error:'input information error!'});
+    }
+    ;
+});
+});
+
+router.post('/logining', (req, res) => {
+  User.findOne({username: req.body.username}, (err, data)=> {
+    if(!data) {
+      res.status(403).send();
+    }else{
+      let id = uuid.v4();
+      new LoginCookie({UUID: id, username: req.body.username}).save((err, data)=> {
+        if (err) {
+          res.statusCode(403).send();
+        }else{
+          res.status(201);
+          res.cookie('UUID',id).send({data:data});
+        }
+      });
     }
   });
 });
 
-router.post('/login', (req, res) => {
-  User.findOne({username: req.body.username},
-      (err, data) => {
-        if (data) {
-          // res.send(data.password===req.body.password)
-          if (data.password === req.body.password) {
-            // req.session.name = req.body.username;
-            // console.log(req.session);
-            // res.send({name: req.session.name});
-            res.send(true);
-          }
-          else{
-            res.send(false);
-          }
-        }
-        else {
-          res.send(false);
-        }
-      });
+
+router.get('/logining',(req,res) => {
+  LoginCookie.findOne({UUID:req.cookies.UUID},(err,data)=>{
+    if (data) {
+      res.status(200).send(data.username);
+    } else {
+      res.status(403).send();
+    }
+  });
 });
 
 module.exports = router;
