@@ -23,7 +23,6 @@ const todoRequestMiddleware = store=> next=> action=> {// eslint-disable-line no
               data: '注册成功！'
             });
             browserHistory.push('/');
-           
           }
         });
     break;

@@ -15,7 +15,7 @@ const orderRequestMiddleware = store =>next=>action=> {// eslint-disable-line no
             store.dispatch(SelectedCake(res.body));
           }
           else{
-            browserHistory.push('/');
+            browserHistory.push('/404');
           }
         });
     break;

@@ -3,9 +3,7 @@
  */
 
 const cakeDetail = (state = [], action)=> {
-
   switch (action.type) {
-   
   case 'CAKEDETAIL_LOADED':
     return action.data;
   }

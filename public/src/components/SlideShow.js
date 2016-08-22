@@ -23,13 +23,10 @@ class SlideShow extends Component {
   }
 
   next() {
-    // if (this.isMounted()) {
     this.setState({
       imageIndex: (this.state.imageIndex + 1) % 5
     });
-    // }
-
-
+    
   }
 
   render() {

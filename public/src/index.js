@@ -4,6 +4,7 @@ import {Router, Route, browserHistory} from 'react-router';
 import CakeDetailContainer from './container/CakeDetailContainer';
 import OrderListContainer from './container/OrderListContainer';
 import CakesList from './components/CakeList';
+import Notfound from './components/404';
 import BrandStory from './components/BrandStory';
 import Orderlist from './components/OrderList';
 import Login from './container/LogIn';
@@ -46,6 +47,7 @@ render(
         <Route path="/exclusive" component={Exclusive}/>
         <Route path="/signup" component={AddTodo}/>
         <Route path="/contact" component={Contact}/>
+        <Route path="/404" component={Notfound}/>
         <Route path="/cakedetail/:id" component={CakeDetailContainer}/>
         <Route path="/orderlist/:id" component={OrderListContainer}/>
       </Router>

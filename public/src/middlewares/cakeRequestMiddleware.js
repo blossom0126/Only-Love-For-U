@@ -3,12 +3,12 @@ const cakeRequestMiddleware = store =>next=>action=> {// eslint-disable-line no-
   switch (action.type) {
   case'INIT':
     request.get('/cakes')
-          .end((err, res)=>{
-            next({
-              type: 'CAKE_LOADED',
-              data: res.body
-            });
-          });
+      .end((err, res)=>{
+        next({
+          type: 'CAKE_LOADED',
+          data: res.body
+        });
+      });
     break;
   }
   next(action);
