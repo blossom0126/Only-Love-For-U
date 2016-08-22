@@ -3,6 +3,7 @@
  */
 import request from 'superagent';
 import { SelectedCake} from '../actions/BuyCakeInfo';
+import {browserHistory} from 'react-router';
 
 const orderRequestMiddleware = store =>next=>action=> {// eslint-disable-line no-unused-vars
   switch (action.type) {
@@ -10,7 +11,12 @@ const orderRequestMiddleware = store =>next=>action=> {// eslint-disable-line no
     request
         .get(`/api/cakedetail/${action.id}`)
         .end((err, res)=> {
-          store.dispatch(SelectedCake(res.body));
+          if(res.status===200){
+            store.dispatch(SelectedCake(res.body));
+          }
+          else{
+            browserHistory.push('/');
+          }
         });
     break;
   }
