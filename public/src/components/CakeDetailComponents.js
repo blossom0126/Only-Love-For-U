@@ -23,7 +23,6 @@ class CakeDetailComponent extends Component {
     return (
         <div>
           <Logo/>
-          <p>{id}</p>
           <p>{name}</p>
           <p>{intro}</p>
           <p>{style}</p>
