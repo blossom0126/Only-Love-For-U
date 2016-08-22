@@ -4,7 +4,7 @@
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as CakeDetailActions from '../actions/CakeDetailActions';
+import { InitializeCakeDetail } from '../actions/CakeDetailActions';
 import CakeDetailComponent from '../components/CakeDetailComponents';
 
 const mapStateToProps = (state) => {
@@ -13,15 +13,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch)=> ({
 
-  getCakeDetail: (data)=> {
-    return bindActionCreators(CakeDetailActions, dispatch(CakeDetailActions.LoadCakeDetail(data)));
-  },
+  // getCakeDetail: (data)=> {
+  //   dispatch(CakeDetailActions.LoadCakeDetail(data));
+  // },
 
   loadPage: (id)=>{
-    return bindActionCreators(CakeDetailActions, dispatch({
-      type: CakeDetailActions.INIT_CAKEDETAIL,
-      id
-    }));
+    console.log('container/cakeDetailContainer/loadPage:id:' + id);
+    dispatch(InitializeCakeDetail(id));
   }
 
 });
