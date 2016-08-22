@@ -1,6 +1,6 @@
 import request from 'superagent';
-
-const signUpRequestMiddleware = store=> next=> action=> {
+import {browserHistory} from 'react-router';
+const todoRequestMiddleware = store=> next=> action=> {// eslint-disable-line no-unused-vars
   switch (action.type) {
   case 'ADD_TODO':
     request.post('/users')
@@ -10,28 +10,53 @@ const signUpRequestMiddleware = store=> next=> action=> {
           password: action.text[1],
           rePassword: action.text[2]
         })
-        .end((err,res)=> {
+        .end((err, res)=> {
           if (res.body.error) {
-            alert(res.body.error);
+            next({
+              type: 'SIGNUP_FAIR',
+              data: res.body.error
+            });
           }
-          else {
+          else if(res.body.data){
+            next({
+              type: 'SIGNUP_SUCCESS',
+              data: '注册成功！'
+            });
+            browserHistory.push('/');
+           
+          }
+        });
+    break;
+   /* case 'INIT':
+      request.get('/users')
+          .end((err,res) => {
+            next({
+              type: 'SIGNUP',
+              data: ''
+            });
+          });
+          
+      break;
+    case 'SIGNUP_SUCCESS':
+      browserHistory.push('/');
+      request.get('/users')
+          .end((err,res) => {
+          store.dispatch({
+              type: 'INIT'
+            });
+          });
+
+      break;
+    case 'SIGNUP_FAIR':
+      request.get('/users')
+          .end((err,res) => {
             store.dispatch({
               type: 'INIT'
             });
-          }
-        });
-    break;
-  case 'INIT':
-    request.get('/users')
-        .end((err,res) => {
-          next({
-            type: 'TODO _LOADED',
-            data: res.body
           });
-        });
-    break;
+  */
   }
   next(action);
 };
 
-export default signUpRequestMiddleware;
+export default todoRequestMiddleware;

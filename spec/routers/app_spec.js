@@ -81,8 +81,6 @@ describe('get /cakes', ()=> {
 
   });
 });
-
-/*global describe,it,expect*/
 describe('post /users', function () {
   it('should get parameter by j', (done)=> {
     request(app)
@@ -120,7 +118,7 @@ describe('register checked', function () {
           password: 'wt1234'
         })
         .end((err, doc)=> {
-          let result = {error:'用户已存在'};
+          let result = {error: '用户已存在'};
           expect(result).toEqual(doc.body);
           if (err) {
             done.fail(err);
@@ -136,7 +134,7 @@ describe('register checked', function () {
         .send({
           username: '667da@12.com',
           password: '123456',
-          rePassword:'123456'
+          rePassword: '123456'
         })
         .end((err, doc)=> {
           let result = {
@@ -174,21 +172,49 @@ describe('register checked', function () {
         });
   });
 });
-it('should be success when login', (done)=> {
-  request(app)
-      .post('/users/login')
-      .type('form')
-      .send({
-        username: 'wangting@163.com',
-        password: 'wt1234'
-      })
-      .end((err, doc)=> {
-        let result =true;
-        expect(result).toEqual(doc.body);
-        if (err) {
-          done.fail(err);
-        } else {
-          done();
-        }
-      });
+
+
+describe('login ', function () {
+
+  it('should be success when login', (done)=> {
+    request(app)
+        .post('/users/login')
+        .type('form')
+        .send({
+          username: 'wangting@163.com',
+          password: 'wt1234'
+        })
+        .end((err, doc)=> {
+          let result = true;
+          expect(result).toEqual(doc.body);
+          if (err) {
+            done.fail(err);
+          } else {
+            done();
+          }
+        });
+  });
+});
+describe('/api/cakelist ', function () {
+
+  it('should be success when login', (done)=> {
+    request(app)
+        .get('/api/cakedetail/57b294a280a821c918823b78')
+        .expect(
+            {
+              '_id': "57b294a280a821c918823b78",
+              'name': "Natural Yogurt Mousse Cake",
+              'intro': "澳洲Binder Vally缤堡谷的“缤酸奶”、纯鲜时令水果",
+              'style': "缤果雪慕",
+              'image': "image/cakelist/02.jpg",
+              '__v': 0
+            })
+        .end((err)=> {
+          if (err) {
+            done.fail(err);
+          } else {
+            done();
+          }
+        });
+  });
 });

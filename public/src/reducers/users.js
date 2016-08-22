@@ -1,7 +1,8 @@
-const users = (state =[], action)=> {
+const users = (state ='', action)=> {
   switch (action.type) {
   case 'LOGIN_FAIR':
-
+    return action.data;
+  case 'LOGIN_SUCCESS':
     return action.data;
   }
   return state;

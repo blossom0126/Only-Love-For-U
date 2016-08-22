@@ -1,5 +1,4 @@
 import request from 'superagent';
-import {browserHistory} from 'react-router';
 
 const loginRequestMiddleware = store =>next=>action=> {// eslint-disable-line no-unused-vars
   switch (action.type) {
@@ -12,7 +11,11 @@ const loginRequestMiddleware = store =>next=>action=> {// eslint-disable-line no
         })
         .end((err, res)=> {
           if (res.body) {
-            browserHistory.push('/');
+            next({
+              type: 'LOGIN_SUCCESS',
+              data: '登录成功！'
+            });
+
           }
           else {
             next({
@@ -26,4 +29,4 @@ const loginRequestMiddleware = store =>next=>action=> {// eslint-disable-line no
   }
   next(action);
 };
-module.exports = loginRequestMiddleware;
+export default loginRequestMiddleware;
