@@ -18,12 +18,12 @@ import Contact from './components/Contact';
 
 import cakeRequestMiddleware from './middlewares/cakeRequestMiddleware';
 import todoRequestMiddleware from './middlewares/todoRequestMiddleware';
-import cakeDetailRequestMiddleware from './middlewares/CakeDetailRequestMiddleware';
+import CakeDetailRequestMiddleware from './middlewares/CakeDetailRequestMiddleware';
 import loginRequestMiddleware from './middlewares/loginRequestMiddleware';
 
 const store = createStore(
     cakeList,
-    applyMiddleware(cakeRequestMiddleware, loginRequestMiddleware, todoRequestMiddleware, cakeDetailRequestMiddleware)
+    applyMiddleware(cakeRequestMiddleware, loginRequestMiddleware, todoRequestMiddleware, CakeDetailRequestMiddleware)
 );
 
 store.dispatch({
