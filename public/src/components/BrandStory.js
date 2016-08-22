@@ -9,7 +9,7 @@ class BrandStory extends Component {
     return (
         <div>
           <Logo/>
-         
+
         </div>
     );
   }

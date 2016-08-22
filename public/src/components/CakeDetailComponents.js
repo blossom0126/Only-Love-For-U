@@ -21,11 +21,11 @@ class CakeDetailComponent extends Component {
     return (
         <div>
           <Logo/>
-          <p>{detail.id}</p>
-          <p>{detail.name}</p>
-          <p>{detail.intro}</p>
-          <p>{detail.style}</p>
           <img src={ '../' + detail.image}></img>
+          {detail.id}
+          {detail.name}
+          {detail.intro}
+          {detail.style}
           <Footer/>
         </div>
     );
