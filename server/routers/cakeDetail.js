@@ -7,12 +7,12 @@ import Cake from '../models/Cake';
 
 let router = express.Router();
 
-// //如果没有id的话
-// router.get('/', (req, res)=> {
-//     Cake.find({}, {}, {limit: 1}, (err, data)=> {
-//         res.send(data);
-//     });
-// });
+//如果没有id的话
+router.get('/', (req, res)=> {
+  Cake.find({}, {}, {limit: 1}, (err, data)=> {
+    res.send(data);
+  });
+});
 
 //获取蛋糕详情页的URI并返回结果
 /*

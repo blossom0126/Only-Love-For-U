@@ -199,22 +199,21 @@ describe('/api/cakelist ', function () {
 
   it('should be success when login', (done)=> {
     request(app)
-        .get('/api/cakedetail/57b294a280a821c918823b78')
-        .expect(
-            {
-              '_id': "57b294a280a821c918823b78",
-              'name': "Natural Yogurt Mousse Cake",
-              'intro': "澳洲Binder Vally缤堡谷的“缤酸奶”、纯鲜时令水果",
-              'style': "缤果雪慕",
-              'image': "image/cakelist/02.jpg",
-              '__v': 0
-            })
-        .end((err)=> {
-          if (err) {
-            done.fail(err);
-          } else {
-            done();
-          }
-        });
+      .get('/api/cakedetail/57b294a280a821c918823b78')
+      .expect({
+        '_id': '57b294a280a821c918823b78',
+        'name': 'Natural Yogurt Mousse Cake',
+        'intro': '澳洲Binder Vally缤堡谷的“缤酸奶”、纯鲜时令水果',
+        'style': '缤果雪慕',
+        'image': 'image/cakelist/02.jpg',
+        '__v': 0
+      })
+      .end((err)=> {
+        if (err) {
+          done.fail(err);
+        } else {
+          done();
+        }
+      });
   });
 });

@@ -6,7 +6,7 @@ class SlideShow extends Component {
     this.state = {
       imageIndex: 0
     };
-    setInterval(this.next.bind(this), 5000);
+    this.interval = setInterval(this.next.bind(this), 5000);
   }
 
   prev() {
@@ -14,12 +14,22 @@ class SlideShow extends Component {
     this.setState({
       imageIndex: index
     });
+
+
+  }
+
+  componentWillUnmount() {
+    window.clearInterval(this.interval);
   }
 
   next() {
+    // if (this.isMounted()) {
     this.setState({
       imageIndex: (this.state.imageIndex + 1) % 5
     });
+    // }
+
+
   }
 
   render() {
