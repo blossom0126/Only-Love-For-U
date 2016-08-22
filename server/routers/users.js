@@ -35,7 +35,7 @@ router.post('/', (req, res,next)=> {
             return next(err);
           }
           else{
-            res.send(data);
+            res.send({data:data});
           }
         });
       }

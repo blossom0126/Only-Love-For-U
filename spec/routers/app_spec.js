@@ -134,19 +134,19 @@ describe('register checked', function () {
         .post('/users')
         .type('form')
         .send({
-          username: '666da@12.com',
+          username: '667da@12.com',
           password: '123456',
           rePassword:'123456'
         })
         .end((err, doc)=> {
           let result = {
-            username: '666da@12.com',
+            username: '667da@12.com',
             password: '123456'
           };
-          //console.log(doc.body);
+          console.log(doc.body);
           expect(result).toEqual({
-            username: doc.body.username,
-            password: doc.body.password
+            username: doc.body.data.username,
+            password: doc.body.data.password
           });
           if (err) {
             done.fail(err);

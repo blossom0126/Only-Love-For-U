@@ -17,8 +17,12 @@ const todoRequestMiddleware = store=> next=> action=> {// eslint-disable-line no
               data: res.body.error
             });
           }
-          else {
-            browserHistory.push('/personcenter');
+          else if(res.body.data){
+            next({
+              type: 'SIGNUP_SUCCESS',
+              data: '注册成功！'
+            });
+            browserHistory.push('/');
           }
         });
     break;
