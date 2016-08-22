@@ -12,7 +12,9 @@ const cakeDetailRequestMiddleware = store =>next=>action=> {// eslint-disable-li
     request
         .get(`/api/cakedetail/${action.id}`)
         .end((err, res)=> {
-          store.dispatch(LoadCakeDetail(res.body));
+          if(res.status===200){
+            store.dispatch(LoadCakeDetail(res.body));
+          }
         });
     break;
   }
