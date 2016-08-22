@@ -81,6 +81,8 @@ describe('get /cakes', ()=> {
 
   });
 });
+
+/*global describe,it,expect*/
 describe('post /users', function () {
   it('should get parameter by j', (done)=> {
     request(app)
@@ -118,7 +120,7 @@ describe('register checked', function () {
           password: 'wt1234'
         })
         .end((err, doc)=> {
-          let result = {error: '用户已存在'};
+          let result = {error:'用户已存在'};
           expect(result).toEqual(doc.body);
           if (err) {
             done.fail(err);
@@ -141,6 +143,7 @@ describe('register checked', function () {
             username: '667da@12.com',
             password: '123456'
           };
+          console.log(doc.body);
           expect(result).toEqual({
             username: doc.body.data.username,
             password: doc.body.data.password
@@ -171,21 +174,17 @@ describe('register checked', function () {
         });
   });
 });
-
-
-describe('login ', function () {
-
-  it('should be success when login', (done)=> {
+describe('login set-cookies ',function () {
+  it('should be return the 201 and cookie when login user exist', (done)=> {
     request(app)
-        .post('/users/login')
+        .post('/users/logining')
         .type('form')
         .send({
           username: 'wangting@163.com',
           password: 'wt1234'
         })
         .end((err, doc)=> {
-          let result = true;
-          expect(result).toEqual(doc.body);
+          expect(201).toEqual(doc.status);
           if (err) {
             done.fail(err);
           } else {
@@ -193,6 +192,59 @@ describe('login ', function () {
           }
         });
   });
+  it('should be return 403  when login user not exist', (done)=> {
+    request(app)
+        .post('/users/logining')
+        .type('form')
+        .send({
+          username: 'wang@163.com',
+          password: 'wt1234'
+        })
+        .end((err, doc)=> {
+          expect(403).toEqual(doc.status);
+          if (err) {
+            done.fail(err);
+          } else {
+            done();
+          }
+        });
+  });
+});
+describe('login get cookies ',function () {
+  it('should be return the 201 and username when login cookie exist', (done)=> {
+    let result='wangting@163.com';
+    request(app)
+        .get('/users/logining')
+        .set('Cookie','UUID=b317f086-defb-4e52-9cde-66d0043c1e56')
+        .end((err, doc)=> {
+          expect(200).toEqual(doc.status);
+          expect(result).toEqual(doc.text);
+          if (err) {
+            done.fail(err);
+          } else {
+            done();
+          }
+        });
+  })
+  it('should be return the 403 when login cookie not exist',(done)=> {
+    request(app)
+        .get('/users/logining')
+        .set('Cookie','UUID=1b9bcf25-4d24-47b2-876a-eb026b')
+        .end((err, doc)=> {
+          expect(403).toEqual(doc.status);
+          if (err) {
+            done.fail(err);
+          } else {
+            done();
+          }
+        });
+  })
+});
+
+
+describe('login ', function () {
+
+
   it('should be fair when login', (done)=> {
     request(app)
         .post('/users/login')
