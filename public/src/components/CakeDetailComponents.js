@@ -17,11 +17,15 @@ class CakeDetailComponent extends Component {
   }
 
   render() {
+    const detail = this.props.CakeDetailReducers;
     return (
         <div>
           <Logo/>
-          <p>{this.props.params.id}</p>
-          <div>这里展示详情页</div>
+          <p>{detail.id}</p>
+          <p>{detail.name}</p>
+          <p>{detail.intro}</p>
+          <p>{detail.style}</p>
+          <img src={ '../' + detail.image}></img>
           <Footer/>
         </div>
     );
