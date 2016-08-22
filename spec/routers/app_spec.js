@@ -193,10 +193,46 @@ describe('login ', function () {
           }
         });
   });
+  it('should be fair when login', (done)=> {
+    request(app)
+        .post('/users/login')
+        .type('form')
+        .send({
+          username: 'wangting@163.com',
+          password: 'wt'
+        })
+        .end((err, doc)=> {
+          let result = false;
+          expect(result).toEqual(doc.body);
+          if (err) {
+            done.fail(err);
+          } else {
+            done();
+          }
+        });
+  });
+  it('should be fair when login', (done)=> {
+    request(app)
+        .post('/users/login')
+        .type('form')
+        .send({
+          username: 'wangtin',
+          password: 'wt'
+        })
+        .end((err, doc)=> {
+          let result = false;
+          expect(result).toEqual(doc.body);
+          if (err) {
+            done.fail(err);
+          } else {
+            done();
+          }
+        });
+  });
 });
 describe('/api/cakelist ', function () {
 
-  it('should be success when login', (done)=> {
+  it('should be return one cake information', (done)=> {
     request(app)
       .get('/api/cakedetail/57b294a280a821c918823b78')
       .expect({
@@ -214,5 +250,17 @@ describe('/api/cakelist ', function () {
           done();
         }
       });
+  });
+  it('should be return 404 page', (done)=> {
+    request(app)
+        .get('/api/cakedetail/57b294a280a821')
+        .expect('error')
+        .end((err)=> {
+          if (err) {
+            done.fail(err);
+          } else {
+            done();
+          }
+        });
   });
 });
