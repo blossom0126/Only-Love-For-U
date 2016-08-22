@@ -7,6 +7,8 @@ router.post('/', (req, res,next)=> {
   const username = req.body.username;
   const password = req.body.password;
   const rePassword = req.body.rePassword;
+//  console.log('wangting');
+  /*const rePassword = req.body.rePassword;*/
 
   function checkUsername(username) {
     let patt = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+$/;
@@ -20,26 +22,29 @@ router.post('/', (req, res,next)=> {
     return password === rePassword;
   }
 
-  if(checkUsername(username)&&checkPassword(password)&&checkPasswordSame(password,rePassword)){
-    new User({
-      username: req.body.username,
-      password: req.body.password
-    }).save((err,data) => {
-      if (err) {
-        return next(err);
+  User.findOne({ username: username }, (err, data) => {
+    if (data) {
+      res.send({error:'用户已存在'});
+    }
+    else {
+      if(checkUsername(username)&&checkPassword(password)&&checkPasswordSame(password,rePassword)){
+        new User({
+          username: req.body.username,
+          password: req.body.password
+        }).save((err,data) => {
+          if (err) {
+            return next(err);
+          }
+          else{
+            res.send(data);
+          }
+        });
       }
-      else{
-        res.send(data);
-      }
-    });
-  }
-  else {
-    res.send({error:'input information error!'});
-  }
+      else
+        res.send({error:'input information error!'});
+    }
+  });
 });
-
-
-
 
 router.post('/login', (req, res) => {
   User.findOne({username: req.body.username},

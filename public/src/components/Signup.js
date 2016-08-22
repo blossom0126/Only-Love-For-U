@@ -15,7 +15,6 @@ class SignUp extends Component {
   }
 
   addTodo() {
-
     let arr = [];
     let inputn = this.refs.inputName.value.trim();
     let inputp = this.refs.inputPwd.value.trim();
@@ -26,7 +25,6 @@ class SignUp extends Component {
     this.refs.inputName.value = '';
     this.refs.inputPwd.value = '';
     this.refs.rePassword.value = '';
-
   }
 
   handleKeyPress(e) {
@@ -67,6 +65,7 @@ class SignUp extends Component {
   }
 
   render() {
+    const {signup}=this.props;
     return (
 
 <div>
@@ -120,6 +119,7 @@ class SignUp extends Component {
                     </div>
                     <span className="text-danger col-md-4" ref='passwordWrongSame' > </span>
                   </div>
+                  <span className="text-danger col-md-10" > {signup}</span>
                   <div className="col-md-offset-4 col-sm-10">
                     <button onClick={this.addTodo.bind(this)} type="button"
                        className="btn btn-default">Create new

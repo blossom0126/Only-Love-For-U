@@ -36,7 +36,6 @@ render(
         <Route path="/brandstory" component={BrandStory}/>
         <Route path="/slideshow" component={Slide}/>
         <Route path="/signup" component={AddTodo}/>
-        <Route path="/personcenter" component={Person}/>
         <Route path="/contact" component={Contact}/>
         <Route path="/cakedetail/:id" component={CakeDetail}/>
       </Router>
