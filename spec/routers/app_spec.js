@@ -141,7 +141,6 @@ describe('register checked', function () {
             username: '667da@12.com',
             password: '123456'
           };
-          console.log(doc.body);
           expect(result).toEqual({
             username: doc.body.data.username,
             password: doc.body.data.password
