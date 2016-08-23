@@ -58,5 +58,9 @@ export default {
   User:[{
     username:'wangting@163.com',
     password:'wt1234'
+  }, 
+  {
+    username: 'liuru@163.com',
+    password: '111111'
   }]
 };
