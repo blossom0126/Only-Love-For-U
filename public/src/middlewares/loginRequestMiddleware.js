@@ -30,6 +30,4 @@ const loginRequestMiddleware = store =>next=>action=> {// eslint-disable-line no
   }
   next(action);
 };
-
-
 module.exports = loginRequestMiddleware;

@@ -1,5 +1,7 @@
 import app from '../../app';
 import request from 'supertest';
+const cookie = require('cookie');
+
 /*global describe,it,expect*/
 describe('get /cakes', ()=> {
   it('should return  cake arr', (done)=> {
@@ -120,7 +122,7 @@ describe('register checked', function () {
           password: 'wt1234'
         })
         .end((err, doc)=> {
-          let result = {error:'用户已存在'};
+          let result = {error: '用户已存在'};
           expect(result).toEqual(doc.body);
           if (err) {
             done.fail(err);
@@ -143,7 +145,6 @@ describe('register checked', function () {
             username: '667da@12.com',
             password: '123456'
           };
-          console.log(doc.body);
           expect(result).toEqual({
             username: doc.body.data.username,
             password: doc.body.data.password
@@ -174,7 +175,7 @@ describe('register checked', function () {
         });
   });
 });
-describe('login set-cookies ',function () {
+describe('login set-cookies ', function () {
   it('should be return the 201 and cookie when login user exist', (done)=> {
     request(app)
         .post('/users/logining')
@@ -184,7 +185,11 @@ describe('login set-cookies ',function () {
           password: 'wt1234'
         })
         .end((err, doc)=> {
+          const cookieisExist = doc.header['set-cookie'];
+          let hasUUIDCookie = cookieisExist.map(item=> cookie.parse(item))
+              .some(item=>item.UUID);
           expect(201).toEqual(doc.status);
+          expect(hasUUIDCookie).toEqual(true);
           if (err) {
             done.fail(err);
           } else {
@@ -197,8 +202,8 @@ describe('login set-cookies ',function () {
         .post('/users/logining')
         .type('form')
         .send({
-          username: 'wang@163.com',
-          password: 'wt1234'
+          username: 'wangting@163.com',
+          password: 'wt12345'
         })
         .end((err, doc)=> {
           expect(403).toEqual(doc.status);
@@ -210,70 +215,37 @@ describe('login set-cookies ',function () {
         });
   });
 });
-describe('login get cookies ',function () {
-  it('should be return the 201 and username when login cookie exist', (done)=> {
-    let result='wangting@163.com';
-    request(app)
-        .get('/users/logining')
-        .set('Cookie','UUID=b317f086-defb-4e52-9cde-66d0043c1e56')
-        .end((err, doc)=> {
-          expect(200).toEqual(doc.status);
-          expect(result).toEqual(doc.text);
-          if (err) {
-            done.fail(err);
-          } else {
-            done();
-          }
-        });
-  })
-  it('should be return the 403 when login cookie not exist',(done)=> {
-    request(app)
-        .get('/users/logining')
-        .set('Cookie','UUID=1b9bcf25-4d24-47b2-876a-eb026b')
-        .end((err, doc)=> {
-          expect(403).toEqual(doc.status);
-          if (err) {
-            done.fail(err);
-          } else {
-            done();
-          }
-        });
-  })
-});
-
-
-describe('login ', function () {
-
-
-  it('should be fair when login', (done)=> {
-    request(app)
-        .post('/users/login')
+describe('login get cookies ', function () {
+  it('should be return the 200 and username when login cookie exist', (done)=> {
+    let result = 'wangting@163.com';
+    let agent = request.agent(app);
+    agent
+        .post('/users/logining')
         .type('form')
         .send({
           username: 'wangting@163.com',
-          password: 'wt'
+          password: 'wt1234'
         })
-        .end((err, doc)=> {
-          let result = false;
-          expect(result).toEqual(doc.body);
-          if (err) {
-            done.fail(err);
-          } else {
+        .end(()=> {
+          agent.get('/users/logining').end((err, res)=> {
+            expect(res.text).toEqual(result);
+            expect(res.status).toEqual(200);
             done();
-          }
+          });
         });
   });
-  it('should be fair when login', (done)=> {
-    request(app)
-        .post('/users/login')
+  it('should be return the 403 when login cookie not exist', (done)=> {
+    let agent = request.agent(app);
+    agent
+        .post('/users/logining')
         .type('form')
         .send({
-          username: 'wangtin',
-          password: 'wt'
+          
+          username: 'liuu@163.com',
+          password: '111111'
         })
-        .end((err, doc)=> {
-          let result = false;
-          expect(result).toEqual(doc.body);
+        .end((err,res)=> {
+          expect(403).toEqual(res.status);
           if (err) {
             done.fail(err);
           } else {
@@ -282,26 +254,27 @@ describe('login ', function () {
         });
   });
 });
-describe('/api/cakelist ', function () {
 
+
+describe('/api/cakelist ', function () {
   it('should be return one cake information', (done)=> {
     request(app)
-      .get('/api/cakedetail/57b294a280a821c918823b78')
-      .expect({
-        '_id': '57b294a280a821c918823b78',
-        'name': 'Natural Yogurt Mousse Cake',
-        'intro': '澳洲Binder Vally缤堡谷的“缤酸奶”、纯鲜时令水果',
-        'style': '缤果雪慕',
-        'image': 'image/cakelist/02.jpg',
-        '__v': 0
-      })
-      .end((err)=> {
-        if (err) {
-          done.fail(err);
-        } else {
-          done();
-        }
-      });
+        .get('/api/cakedetail/57b294a280a821c918823b78')
+        .expect({
+          '_id': '57b294a280a821c918823b78',
+          'name': 'Natural Yogurt Mousse Cake',
+          'intro': '澳洲Binder Vally缤堡谷的“缤酸奶”、纯鲜时令水果',
+          'style': '缤果雪慕',
+          'image': 'image/cakelist/02.jpg',
+          '__v': 0
+        })
+        .end((err)=> {
+          if (err) {
+            done.fail(err);
+          } else {
+            done();
+          }
+        });
   });
   it('should be return 404 page', (done)=> {
     request(app)
