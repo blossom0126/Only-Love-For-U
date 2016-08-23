@@ -7,6 +7,9 @@ import CakesList from './components/CakeList';
 import Notfound from './components/404';
 import BrandStory from './components/BrandStory';
 import Orderlist from './components/OrderList';
+
+import ConfirmPay from './container/ConfirmPayContainer';
+
 import Login from './container/LogIn';
 import Slide from './components/SlideShow';
 import APP from './components/App';
@@ -22,12 +25,14 @@ import signUpRequestMiddleware from './middlewares/signUpRequestMiddleware';
 import cakeDetailRequestMiddleware from './middlewares/cakeDetailRequestMiddleware';
 import loginRequestMiddleware from './middlewares/loginRequestMiddleware';
 import orderRequestMiddleware from './middlewares/orderRequestMiddleware';
+import getOrderInfoMiddleware from './middlewares/getOrderInfoMiddleware';
+
 
 const store = createStore(
     cakeList,
     applyMiddleware(cakeRequestMiddleware, loginRequestMiddleware,
         signUpRequestMiddleware, cakeDetailRequestMiddleware,
-        orderRequestMiddleware)
+        orderRequestMiddleware,getOrderInfoMiddleware)
 );
 
 store.dispatch({
@@ -44,6 +49,9 @@ render(
         <Route path="/slideshow" component={Slide}/>
         <Route path="/presoncenter" component={Presoncenter}/>
         <Route path="/orderlist" component={Orderlist}/>
+
+        <Route path="/confirmpay" component={ConfirmPay}/>         
+
         <Route path="/exclusive" component={Exclusive}/>
         <Route path="/signup" component={AddTodo}/>
         <Route path="/contact" component={Contact}/>
