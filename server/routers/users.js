@@ -48,12 +48,11 @@ router.post('/', (req, res, next)=> {
         res.send({error: 'input information error!'});
       }
     }
-    ;
-});
+  });
 });
 
 router.post('/logining', (req, res) => {
-  User.findOne({username: req.body.username}, (err, data)=> {
+  User.findOne({username: req.body.username,password:req.body.password}, (err, data)=> {
     if(!data) {
       res.status(403).send();
     }else{
