@@ -4,9 +4,6 @@ import bodyParser from 'body-parser';
 import regRouters from './server/routers';
 import path from 'path';
 
-const session = require('express-session');
-
-
 const app = express();
 
 mongoose.connect('mongodb://localhost/cakes');
