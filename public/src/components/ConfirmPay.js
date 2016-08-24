@@ -30,7 +30,7 @@ class ConfirmPay extends Component {
                         <tbody>
                             <tr>
                                 <td>订单编号: </td>
-                                <td>{_id}</td>
+                                <td>{id}</td>
                             </tr>
                             <tr>
                                 <td>真实姓名: </td>
