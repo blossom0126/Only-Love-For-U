@@ -3,8 +3,6 @@
  */
 
 import React, {Component} from 'react';// eslint-disable-line no-unused-vars
-import Logo from './Logo';
-import Footer from './Footer';
 import {Link} from 'react-router';
 class CakeDetailComponent extends Component {
 
@@ -22,7 +20,6 @@ class CakeDetailComponent extends Component {
     const  id=this.props.CakeDetailReducers._id;
     return (
         <div>
-          <Logo/>
           <p>{name}</p>
           <p>{intro}</p>
           <p>{style}</p>
@@ -30,7 +27,6 @@ class CakeDetailComponent extends Component {
        <Link to={'/orderlist/' + id}>
          <button className="btn btn-default">立即购买</button>
          </Link>
-          <Footer/>
         </div>
     );
   }
