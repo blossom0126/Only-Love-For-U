@@ -4,7 +4,6 @@
 
 import React, {Component} from 'react';// eslint-disable-line no-unused-vars
 import Logo from './Logo';
-
 class OrderList extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +25,9 @@ class OrderList extends Component {
     order.isPay = false;
     order.price = 100;
     this.props.confirmOrderFunction(order);
+
   }
+
 
   render() {
     const order = this.props.order;

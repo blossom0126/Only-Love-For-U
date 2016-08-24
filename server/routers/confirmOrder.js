@@ -26,8 +26,9 @@ router.post('/',(req, res,next)=> {
   });
 });
 
+
 router.get('/:id', (req, res) => {
-  Order.findOne({_id: req.params.id }, (err, data) => {
+  Order.findOne({ _id: req.params.id }, (err, data) => {
     res.send(data);
   });
 });
