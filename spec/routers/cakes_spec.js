@@ -3,7 +3,7 @@
  */
 import app from '../../app';
 import request from 'supertest';
-/*global describe,it,expect*/
+/*global describe,it*/
 describe('get /cakes', ()=> {
   it('should return  cake arr', (done)=> {
     request(app)
