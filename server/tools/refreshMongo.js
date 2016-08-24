@@ -2,14 +2,13 @@ import mongoose from 'mongoose';
 import rawData from './fixture/raw-data';
 import Cake from '../models/Cake';
 import User from '../models/User';
-import OrderInfo from '../models/OrderInfo';
-
+import Order from '../models/Order';
 
 
 const modelsMap = {
   Cake,
   User,
-  OrderInfo
+  Order
 };
 
 let docs = Object.keys(rawData);

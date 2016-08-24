@@ -26,6 +26,7 @@ import signUpRequestMiddleware from './middlewares/signUpRequestMiddleware';
 import cakeDetailRequestMiddleware from './middlewares/cakeDetailRequestMiddleware';
 import loginRequestMiddleware from './middlewares/loginRequestMiddleware';
 import orderRequestMiddleware from './middlewares/orderRequestMiddleware';
+import confirmOrderMiddleware from './middlewares/confirmOrderMiddleware';
 import validLoginRequestMiddleware from './middlewares/validLoginRequestMiddleware';
 import {validLogin} from './actions/validLogin';
 import getOrderInfoMiddleware from './middlewares/getOrderInfoMiddleware';
@@ -35,7 +36,8 @@ const store = createStore(
     cakeList,
     applyMiddleware(cakeRequestMiddleware, loginRequestMiddleware,
         signUpRequestMiddleware, cakeDetailRequestMiddleware,
-        orderRequestMiddleware,getOrderInfoMiddleware, validLoginRequestMiddleware)
+        orderRequestMiddleware,confirmOrderMiddleware,
+        getOrderInfoMiddleware, validLoginRequestMiddleware)
 );
 
 store.dispatch({
@@ -50,7 +52,9 @@ render(
     <Provider store={store}>
       <Router history={browserHistory}>
 
-       
+        <Route path="/slideshow" component={Slide}/>
+        <Route path="/presoncenter" component={Presoncenter}/>
+        <Route path="/exclusive" component={Exclusive}/>
         <Route path="/" component={MainView}>
           <IndexRoute component={APP}/>
           <Route path="/login" component={Login}/>
@@ -60,7 +64,7 @@ render(
           <Route path="/presoncenter" component={Presoncenter} onEnter={validateLogin}/>
           <Route path="/exclusive" component={Exclusive} onEnter={validateLogin}/>
           <Route path="/orderlist" component={Orderlist}/>
-          <Route path="/confirmpay" component={ConfirmPay}/>
+          <Route path="/confirmpay/:id" component={ConfirmPay}/>
           <Route path="/signup" component={AddTodo}/>
           <Route path="/contact" component={Contact}/>
           <Route path="/404" component={Notfound}/>

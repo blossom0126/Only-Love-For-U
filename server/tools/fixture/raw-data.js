@@ -63,15 +63,15 @@ export default {
     username: 'liuru@163.com',
     password: '111111'
   }],
-  OrderInfo:[{
-    name:'张三',
-    tel:'18829290000',
-    address:'陕西省西安市邮电大学',
-    more:'请尽快发货',
-    cakeName:'Rainbow Paris',
-    image:'image/cakelist/08.jpg',
-    price:125,
-    id:'12345678',
-    isPay:false
+  Order:[{
+    username:'其实我是黄蓉＿＿嘿嘿嘿',
+    name:'wangting',
+    tel:'110',
+    address:'china',
+    more:'111',
+    cakeName:'456',
+    image:'image/cakelist/02.jpg',
+    isPay:false,
+    price:100,
   }]
 };

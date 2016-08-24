@@ -1,4 +1,4 @@
-const orderInfo = (state = [], action)=> {
+const orderInfo = (state = {}, action)=> {
   switch (action.type) {
   case 'OrderLoaded':
     return action.data;

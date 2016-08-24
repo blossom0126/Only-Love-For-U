@@ -8,14 +8,14 @@ import orderInfo from './orderInfo';
 import loginstate from './loginState';
 import loginusername from './userName';
 
+
 const cakeList = combineReducers({
   cake,
   CakeDetailReducers,
   user,
   signup,
-  order,
   loginstate,
-  loginusername
+  loginusername,
   order,
   orderInfo
 });

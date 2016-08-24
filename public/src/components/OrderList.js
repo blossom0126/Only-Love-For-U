@@ -3,6 +3,8 @@
  */
 
 import React, {Component} from 'react';// eslint-disable-line no-unused-vars
+import Logo from './Logo';
+
 class OrderList extends Component {
   constructor(props) {
     super(props);
@@ -11,8 +13,19 @@ class OrderList extends Component {
   componentDidMount() {
     this.props.loadorder(this.props.params.id);
   }
-  componentWillMount() {
 
+  confirm(){
+    const order = {};
+    order.username = '我不是黄蓉';
+    order.name = this.refs.inputName.value.trim();
+    order.tel = this.refs.inputTel.value.trim();
+    order.address = this.refs.inputAddress.value.trim();
+    order.more = this.refs.inputMore.value.trim();
+    order.cakeName = this.props.order.name;
+    order.image = this.props.order.image;
+    order.isPay = false;
+    order.price = 100;
+    this.props.confirmOrderFunction(order);
   }
 
   render() {
@@ -20,6 +33,7 @@ class OrderList extends Component {
     // const id = this.props.order._id;
     return (
         <div>
+<Logo/>
             <div className='col-md-2'></div>
             <div className="container col-md-8 orderlistborder text-center">
               <br/><br/>
@@ -62,7 +76,7 @@ class OrderList extends Component {
                       <input type="text"
                              className="form-control"
                              id="inputEmail3"
-                             ref="inputAddress"
+                             ref="inputMore"
                       />
                     </div>
                   </div>
@@ -74,7 +88,8 @@ class OrderList extends Component {
                   <br/><br/>
                   <div className="col-md-offset-10 col-sm-10">
                     <button  type="button"
-                             className="btn btn-info">确认订单
+                             className="btn btn-info"
+                             onClick={this.confirm.bind(this)}>确认订单
                     </button>
                   </div>
                   <br/><br/>
