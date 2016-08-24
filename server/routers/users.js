@@ -52,6 +52,7 @@ router.post('/', (req, res, next)=> {
 });
 
 router.post('/logining', (req, res) => {
+  console.log('333333333333333')
   User.findOne({username: req.body.username,password:req.body.password}, (err, data)=> {
     if(!data) {
       res.status(403).send();
@@ -59,7 +60,7 @@ router.post('/logining', (req, res) => {
       let id = uuid.v4();
       new LoginCookie({UUID: id, username: req.body.username}).save((err, data)=> {
         if (err) {
-          res.statusCode(403).send();
+          res.status(403).send();
         }else{
           res.status(201);
           res.cookie('UUID',id).send({data:data});
@@ -69,13 +70,15 @@ router.post('/logining', (req, res) => {
   });
 });
 
-
 router.get('/logining',(req,res) => {
+  console.log('---------');
   LoginCookie.findOne({UUID:req.cookies.UUID},(err,data)=>{
+    console.log(data);
     if (data) {
       res.status(200).send(data.username);
-    } else {
-      res.status(403).send();
+    } 
+    else {
+      res.sendStatus(403);
     }
   });
 });

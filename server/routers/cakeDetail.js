@@ -16,6 +16,7 @@ let router = express.Router();
 
 //获取蛋糕详情页的URI并返回结果
 router.get('/:id', (req, res) => {
+  console.log('11111111111')
   Cake.findOne({_id: req.params.id}, (err, cake)=> {
     if (err) {
       res.status(404).send('error');

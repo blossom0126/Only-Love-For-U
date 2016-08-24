@@ -23,7 +23,7 @@ class LogIn extends Component {
     this.doAction();
   }
   render() {
-    const user = this.props.user;
+    // const user = this.props.user;
     return (
         <div>
         <Logo/>
@@ -42,7 +42,7 @@ class LogIn extends Component {
                              onKeyPress={this.handleKeyPress.bind(this)}
                       />
                     </div>
-                    <span className="text-danger col-md-4" id="error_show" >{user}</span>
+                    <span className="text-danger col-md-4" id="error_show" ></span>
                   </div>
                   <div className="form-group">
                     <label htmlFor="inputEmail3" className="col-md-3 col-md-6 control-label">Password:</label>

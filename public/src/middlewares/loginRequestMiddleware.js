@@ -10,24 +10,28 @@ const loginRequestMiddleware = store =>next=>action=> {// eslint-disable-line no
           username: action.text.username,
           password: action.text.password
         })
-        .end((err, res)=> {// eslint-disable-line no-unused-vars
-          if (!err) {
-            browserHistory.push('/');
-            next({
-              type: 'LOGIN_SUCCESS',
-              data: '登录成功！'
-            });
+        .end((err, data)=> {// eslint-disable-line no-unused-vars
+          if (data.status===201) {
+            console.log(data.body.data.username);
+            // browserHistory.push('/');
+             next({
+               type: 'Loggin_state_received',
+               name:data.body.data.username,
+               states:'SUCCESS'
+             });
           }
           else {
             next({
-              type: 'LOGIN_FAIR',
-              data: '登陆失败，请重试'
+              type: 'Loggin_state_received',
+              name: undefined,
+              states:'FAIL'
             });
           }
 
         });
     break;
+
   }
   next(action);
 };
-module.exports = loginRequestMiddleware;
+export default loginRequestMiddleware;

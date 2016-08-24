@@ -185,9 +185,9 @@ describe('login set-cookies ', function () {
           password: 'wt1234'
         })
         .end((err, doc)=> {
-          const cookieisExist = doc.header['set-cookie'];
-          let hasUUIDCookie = cookieisExist.map(item=> cookie.parse(item))
-              .some(item=>item.UUID);
+          const cookieIsExist = doc.header['set-cookie'];
+          let hasUUIDCookie = cookieIsExist.map(item=> cookie.parse(item))
+                                          .some(item=>item.UUID);
           expect(201).toEqual(doc.status);
           expect(hasUUIDCookie).toEqual(true);
           if (err) {
@@ -240,7 +240,6 @@ describe('login get cookies ', function () {
         .post('/users/logining')
         .type('form')
         .send({
-          
           username: 'liuu@163.com',
           password: '111111'
         })
