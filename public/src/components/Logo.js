@@ -2,9 +2,24 @@ import React, {Component} from 'react';// eslint-disable-line no-unused-vars
 import {Link} from 'react-router';
 
 class Logo extends Component {
-  
+
+  componentWillMount(){
+    this.props.aaaaliu();
+  }
+
   render() {
-    // let loginuser=this.props.user;
+    let loginstate;
+    let path;
+    if(this.props.loginusername!==null)
+    {
+      loginstate=this.props.loginusername;
+      path='/presoncenter';
+    }
+    else{
+      loginstate='登录';
+      path='/login';
+    }
+
     return (
         <div className="header">
           <div className="header-top">
@@ -20,8 +35,8 @@ class Logo extends Component {
                 </ul>
 
               </div>
-              <ul className="nav navbar-nav" style={{marginLeft:'70px'}}>
-              <li><Link className="loginands" to="/login"></Link></li>
+              <ul className="nav navbar-nav" style={{marginLeft:'60px'}}>
+              <li><Link className="loginands" to={path}>{loginstate}</Link></li>
               <li><Link className="loginands" to="/signup">注册</Link></li>
             </ul>
             </div>

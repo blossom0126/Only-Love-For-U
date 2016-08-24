@@ -15,16 +15,14 @@ const loginRequestMiddleware = store =>next=>action=> {// eslint-disable-line no
             console.log(data.body.data.username);
              browserHistory.push('/');
              next({
-               type: 'Loggin_state_received',
-               name:data.body.data.username,
-               states:'SUCCESS'
+               type: 'Loggin_return',
+               username:data.body.data.username
              });
           }
           else {
             next({
-              type: 'Loggin_state_received',
-              name: undefined,
-              states:'FAIL'
+              type: 'Loggin_return',
+              username: '登录'
             });
           }
 

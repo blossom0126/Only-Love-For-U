@@ -3,13 +3,12 @@
  */
 import React, {Component} from 'react';// eslint-disable-line no-unused-vars
 import {browserHistory} from 'react-router';
-import Logo from './Logo';
+import Logo from '../container/Logo';
 import Footer from './Footer';
 class MainView extends Component {
   componentWillUpdate(nextProps){
     if(nextProps.loginstate==='FAIL')
     {
-      console.log(111);
       this.props.redirectToLoginPage();
       browserHistory.push('/login');
     }
