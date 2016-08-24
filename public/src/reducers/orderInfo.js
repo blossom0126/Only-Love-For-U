@@ -1,6 +1,6 @@
 const orderInfo = (state = {}, action)=> {
   switch (action.type) {
-  case 'OrderLoaded':
+  case 'ORDER_LOADED':
     return action.data;
   }
   return state;

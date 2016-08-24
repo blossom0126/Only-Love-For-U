@@ -30,12 +30,13 @@ import confirmOrderMiddleware from './middlewares/confirmOrderMiddleware';
 import validLoginRequestMiddleware from './middlewares/validLoginRequestMiddleware';
 import {validLogin} from './actions/validLogin';
 import getOrderInfoMiddleware from './middlewares/getOrderInfoMiddleware';
-
+import confirmPayMiddleware from './middlewares/confirmPayMiddleware';
 
 const store = createStore(
     cakeList,
     applyMiddleware(cakeRequestMiddleware, loginRequestMiddleware,
         signUpRequestMiddleware, cakeDetailRequestMiddleware,
+        orderRequestMiddleware,getOrderInfoMiddleware,confirmPayMiddleware)
         orderRequestMiddleware,confirmOrderMiddleware,
         getOrderInfoMiddleware, validLoginRequestMiddleware)
 );
