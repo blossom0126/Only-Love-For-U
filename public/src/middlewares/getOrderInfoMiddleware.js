@@ -5,7 +5,7 @@ const getOrderInfoMiddleware = store => next => action => {// eslint-disable-lin
   switch (action.type) {
   case 'OrderInfo':
     request
-        .get('/api/order/${action.id}')
+        .get(`/api/order/${action.id}`)
         .end((err, res) => {
           if (res.body) {
             next({
@@ -14,11 +14,11 @@ const getOrderInfoMiddleware = store => next => action => {// eslint-disable-lin
             });
           }
         });
-
+     
     break;
   case 'ConfirmPay':
     request
-        .put('/api/order/${action.id}')
+        .put(`/api/order/${action.id}`)
         .query({ isPay: true })
         .end((err, res) => {          
           if (res.status === 205) {
