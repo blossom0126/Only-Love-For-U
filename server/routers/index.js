@@ -5,7 +5,6 @@ const regRouter = (app)=> {
   app.use('/api/order',require('./confirmOrder'));
 
 
-  //app.use('/api/order',require('./order'));
 };
 
 export default regRouter;

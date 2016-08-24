@@ -8,7 +8,6 @@ class ConfirmPay extends Component {
 
   componentDidMount() {
     this.props.loadorderinfo(this.props.params.id);
-    
   }
 
   readyToPay () {
@@ -16,7 +15,7 @@ class ConfirmPay extends Component {
   }
   
   render() {
-    const {_id,name,tel,address,more,cakeName,image,price}=this.props.order;
+    const {_id,name,tel,address,more,cakeName,image,price}=this.props.orderInfo;
     return (
             <div>
                 <Logo/>
@@ -30,7 +29,7 @@ class ConfirmPay extends Component {
                         <tbody>
                             <tr>
                                 <td>订单编号: </td>
-                                <td>{id}</td>
+                                <td>{_id}</td>
                             </tr>
                             <tr>
                                 <td>真实姓名: </td>

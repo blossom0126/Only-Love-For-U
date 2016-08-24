@@ -33,16 +33,14 @@ router.get('/:id', (req, res) => {
   });
 });
 router.put('/:id', (req, res) => {
-  Order.update({
-    isPay: req.params.isPay
-  }, (err, data) => {
-    if (data) {
+  Order.update({_id:req.params.id},{isPay:req.body.isPay}, (err, doc) => {// eslint-disable-line no-unused-vars
+    if (!err) {
       res.status(205).send();
     }
-    else {
+    else{
       res.status(404).send();
     }
-  });
+  })
 });
 
 

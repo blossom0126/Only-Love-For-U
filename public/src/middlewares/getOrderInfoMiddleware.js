@@ -11,8 +11,7 @@ const getOrderInfoMiddleware = store => next => action => {// eslint-disable-lin
                 data: res.body
               });
             }
-          })
-
+          });
     break;
   }
   next(action);

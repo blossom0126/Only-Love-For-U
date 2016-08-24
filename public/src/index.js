@@ -36,9 +36,8 @@ const store = createStore(
     cakeList,
     applyMiddleware(cakeRequestMiddleware, loginRequestMiddleware,
         signUpRequestMiddleware, cakeDetailRequestMiddleware,
-        orderRequestMiddleware,getOrderInfoMiddleware,confirmPayMiddleware)
-        orderRequestMiddleware,confirmOrderMiddleware,
-        getOrderInfoMiddleware, validLoginRequestMiddleware)
+        orderRequestMiddleware,getOrderInfoMiddleware,confirmPayMiddleware
+    ,confirmOrderMiddleware, validLoginRequestMiddleware)
 );
 
 store.dispatch({
