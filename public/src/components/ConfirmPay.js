@@ -1,5 +1,4 @@
 import React, {Component} from 'react';// eslint-disable-line no-unused-vars
-import Logo from './Logo';
 
 class ConfirmPay extends Component {
   constructor(props) {
@@ -18,7 +17,6 @@ class ConfirmPay extends Component {
     const {_id,name,tel,address,more,cakeName,image,price}=this.props.orderInfo;
     return (
             <div>
-                <Logo/>
                 <div className='container col-md-12'>
                     <div className="col-md-7">
                     <img src={ '../' + image}></img>

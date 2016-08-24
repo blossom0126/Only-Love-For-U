@@ -9,15 +9,18 @@ class Logo extends Component {
 
   render() {
     let loginstate;
+    let signupstate;
     let path;
     if(this.props.loginusername!==null)
     {
       loginstate=this.props.loginusername;
       path='/presoncenter';
+      signupstate='退出';
     }
     else{
       loginstate='登录';
       path='/login';
+      signupstate='注册';
     }
 
     return (
@@ -37,7 +40,7 @@ class Logo extends Component {
               </div>
               <ul className="nav navbar-nav" style={{marginLeft:'60px'}}>
               <li><Link className="loginands" to={path}>{loginstate}</Link></li>
-              <li><Link className="loginands" to="/signup">注册</Link></li>
+              <li><Link className="loginands" to="/signup">{signupstate}</Link></li>
             </ul>
             </div>
           </div>

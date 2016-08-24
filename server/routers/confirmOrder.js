@@ -16,7 +16,7 @@ router.post('/',(req, res,next)=> {
     cakeName:req.body.cakeName,
     image:req.body.image,
     isPay:req.body.isPay,
-    price:req.body.price,
+    price:req.body.price
   }).save((err, data) => {
     if (err) {
       return next(err);
