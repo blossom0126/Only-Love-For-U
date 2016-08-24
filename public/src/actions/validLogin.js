@@ -4,8 +4,7 @@
 export const validLogin = ()=> ({
   type: 'VALID_LOGIN'
 });
-export const login_state_received = (name,states)=> ({
-  type: 'Loggin_state_received',
-  name,
-  states
+
+export const redirectToLogin = () => ({
+  type: 'REDIRECT_TO_LOGIN'
 });

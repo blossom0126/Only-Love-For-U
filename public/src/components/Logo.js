@@ -11,7 +11,7 @@ class Logo extends Component {
               <div className="top-nav">
                 <span className="menu two"> </span>
                 <ul>
-                  <li><Link to="/index">首&nbsp;&nbsp;页</Link></li>
+                  <li><Link to="/">首&nbsp;&nbsp;页</Link></li>
                   <li><Link className="active" to="/cakelist">蛋糕名录</Link></li>
                   <li><Link to="/exclusive">唯依专区</Link></li>
                   <li><Link to="brandstory">品牌故事</Link></li>

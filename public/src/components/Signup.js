@@ -3,7 +3,6 @@
  */
 /*wang genwang*/
 import React, {Component} from 'react'; // eslint-disable-line no-unused-vars
-import Logo from './Logo';
 class SignUp extends Component {
   constructor() {
     super();
@@ -70,7 +69,6 @@ class SignUp extends Component {
     return (
 
 <div>
-  <Logo/>
           <div className="container">
             <div className="col-md-10">
               <div className="col-md-8 ">

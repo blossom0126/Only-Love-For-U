@@ -3,15 +3,14 @@
  */
 import {connect} from 'react-redux';
 import MainView from '../components/MainView';
-import {validLogin} from '../actions/validLogin';
+import {redirectToLogin} from '../actions/validLogin';
 const mapStateToProps = (state) => {
   return state;
 };
 const mapDispatchToProps = (dispatch)=> {
   return {
-    valaaaid: ()=> {
-      console.log('container');
-      dispatch(validLogin());
+    redirectToLoginPage: ()=> {
+      dispatch(redirectToLogin());
     }
   };
 };

@@ -3,7 +3,6 @@
  */
 
 import React, {Component} from 'react'; // eslint-disable-line no-unused-vars
-import Logo from './Logo';
 class LogIn extends Component {
   doAction() {
     let arr = {};
@@ -26,7 +25,6 @@ class LogIn extends Component {
     // const user = this.props.user;
     return (
         <div>
-        <Logo/>
         <div className="container">
             <div className="col-md-10">
               <div className="col-md-10 ">
