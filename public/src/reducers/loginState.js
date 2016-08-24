@@ -6,6 +6,7 @@ const loginstate = (state = 'Checking', action)=> {
       return action.states;
 
     case 'REDIRECT_TO_LOGIN':
+      console.log('reducer-checking');
       return 'Checking';
   }
   

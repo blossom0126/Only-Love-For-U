@@ -7,9 +7,7 @@ import CakesList from './components/CakeList';
 import Notfound from './components/404';
 import BrandStory from './components/BrandStory';
 import Orderlist from './components/OrderList';
-
 import ConfirmPay from './container/ConfirmPayContainer';
-
 import Login from './container/LogIn';
 import Slide from './components/SlideShow';
 import APP from './components/App';
@@ -51,10 +49,6 @@ function validateLogin() {
 render(
     <Provider store={store}>
       <Router history={browserHistory}>
-
-        <Route path="/slideshow" component={Slide}/>
-        <Route path="/presoncenter" component={Presoncenter}/>
-        <Route path="/exclusive" component={Exclusive}/>
         <Route path="/" component={MainView}>
           <IndexRoute component={APP}/>
           <Route path="/login" component={Login}/>

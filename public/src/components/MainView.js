@@ -9,6 +9,7 @@ class MainView extends Component {
   componentWillUpdate(nextProps){
     if(nextProps.loginstate==='FAIL')
     {
+      console.log(111);
       this.props.redirectToLoginPage();
       browserHistory.push('/login');
     }

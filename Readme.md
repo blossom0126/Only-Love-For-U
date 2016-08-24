@@ -1,4 +1,12 @@
 #OnlyLoveForU
+##运行方式：
+1. git clone 此项目
+2. npm install 
+3. sudo mongod 运行数据库
+4. npm run wpw 打包webpack
+5. npm run refreshMongo
+6. npm start 开启服务器
+请访问：http://127.0.0.1:3000
 
 ##提交格式：
 1. 名字---提交内容

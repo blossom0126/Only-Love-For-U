@@ -2,6 +2,7 @@ import React, {Component} from 'react';// eslint-disable-line no-unused-vars
 import {Link} from 'react-router';
 
 class Logo extends Component {
+  
   render() {
     // let loginuser=this.props.user;
     return (
@@ -20,7 +21,7 @@ class Logo extends Component {
 
               </div>
               <ul className="nav navbar-nav" style={{marginLeft:'70px'}}>
-              <li><Link className="loginands" to="/login">deng</Link></li>
+              <li><Link className="loginands" to="/login"></Link></li>
               <li><Link className="loginands" to="/signup">注册</Link></li>
             </ul>
             </div>

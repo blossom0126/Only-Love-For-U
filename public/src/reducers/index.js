@@ -14,9 +14,9 @@ const cakeList = combineReducers({
   CakeDetailReducers,
   user,
   signup,
+  order,
   loginstate,
   loginusername,
-  order,
   orderInfo
 });
 
