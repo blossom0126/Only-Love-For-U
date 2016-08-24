@@ -13,7 +13,7 @@ const loginRequestMiddleware = store =>next=>action=> {// eslint-disable-line no
         .end((err, data)=> {// eslint-disable-line no-unused-vars
           if (data.status===201) {
             console.log(data.body.data.username);
-            // browserHistory.push('/');
+             browserHistory.push('/index');
              next({
                type: 'Loggin_state_received',
                name:data.body.data.username,
