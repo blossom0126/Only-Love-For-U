@@ -1,20 +1,20 @@
 export const OrderInfo = (id)=> {
   return {
-    type:'OrderInfo',
+    type:'ORDER_INFO',
     id
   };
 };
 
 export const OrderLoaded=(data)=>{
   return {
-    type:'OrderLoaded',
+    type:'ORDER_LOADED',
     data
   };
 };
 
 export const ConfirmPay = (id)=> {
   return {
-    type: 'ConfirmPay',
+    type: 'CONFIRM_PAY',
     id
   };
 };
