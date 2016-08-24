@@ -22,7 +22,6 @@ class Logo extends Component {
       path='/login';
       signupstate='注册';
     }
-
     return (
         <div className="header">
           <div className="header-top">
@@ -31,12 +30,11 @@ class Logo extends Component {
                 <span className="menu two"> </span>
                 <ul>
                   <li><Link to="/">首&nbsp;&nbsp;页</Link></li>
-                  <li><Link className="active" to="/cakelist">蛋糕名录</Link></li>
+                  <li><Link to="/cakelist">蛋糕名录</Link></li>
                   <li><Link to="/exclusive">唯依专区</Link></li>
                   <li><Link to="brandstory">品牌故事</Link></li>
-                  <li className="lost"><Link to="/contact">联系我们</Link></li>
+                  <li className="lost"><Link to="/contact">订购帮助</Link></li>
                 </ul>
-
               </div>
               <ul className="nav navbar-nav" style={{marginLeft:'60px'}}>
               <li><Link className="loginands" to={path}>{loginstate}</Link></li>

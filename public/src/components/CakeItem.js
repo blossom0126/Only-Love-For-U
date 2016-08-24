@@ -11,9 +11,9 @@ class CakeItem extends Component {
 
     return (
         <div>
-          <div className="text-center col-xs-6 col-md-3">
-            <Link to={'/cakeDetail/' + id} className="text-center thumbnail">
-              <img src={image} title={intro}  />
+          <div className="text-center col-xs-6 col-md-3  gallery-left two">
+            <Link to={'/cakeDetail/' + id} className="text-center thumbnail mask b-link-stripe b-animate-go swipebox">
+              <img src={image} title={intro} className="img-responsive zoom-img" />
             </Link>
             <div>{name}</div>
             <div>{style}</div>

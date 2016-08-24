@@ -18,12 +18,12 @@ class Footer extends Component {
               <div className="bottom-nav">
                 <h4>LEARN</h4>
                 <ul>
-                  <li><Link className="active" to="/">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</Link></li>
-                  <li className="lost"><Link to="/contact">联系我们</Link></li>
+                  <li><Link to="/">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</Link></li>
+
                   <li><Link to="/cakelist">蛋糕名录</Link></li>
                   <li><Link to="/exclusive">唯依专区</Link></li>
                   <li><Link to="/brandstory">品牌故事</Link></li>
-                  <li><Link to="/contact">联系我们</Link></li>
+                  <li><Link to="/contact">订购帮助</Link></li>
                   <div className="clearfix"></div>
                 </ul>
               </div>

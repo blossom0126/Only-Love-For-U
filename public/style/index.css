@@ -1,5 +1,8 @@
+.cakedetail{
+    height: 400px;
+}
 .liuxiananshen{
-    height: 800px;
+    height: 600px;
 }
 .aaaa{
     height: 450px;
@@ -658,7 +661,7 @@ li.lost {
     font-weight: 400;
 }
 .about-text {
-    width: 60%;
+    width: 100%;
     padding: 0;
     background: #F7F7F7;
     padding:6.63em 3em;
@@ -727,7 +730,7 @@ li.lost {
 }
 /*-----start-team-section----*/
 .team-section{
-    /*background: url("../images/team-bg.jpg") no-repeat 0px 0px;*/
+   /* background: url("../image/images/team-bg.jpg") no-repeat 0px 0px;*/
     padding: 0em 0 0 0;
     background-size: cover;
     -o-background-size: cover;
@@ -740,7 +743,7 @@ li.lost {
     margin-top: 4em;
 }
 .ch-grid h4 {
-    color: #fff;
+    color: #080808;
     font-size:1.2em;
     font-weight: 400;
     margin:0.5em 0;
@@ -760,12 +763,12 @@ li.lost {
 }
 .team-left h3{
     font-size: 3em;
-    color: #fff;
+    color: #080808;
     font-weight: 600;
     text-align: center;
 }
 a.more {
-    color: #fff;
+    color: #1b2327;
     margin: 0.6em 0;
     display: inline-block;
 }
@@ -830,7 +833,7 @@ a.more {
 
 }
 .ch-info h3 {
-    color: #fff;
+    color: #080808;
     text-transform: uppercase;
     position: relative;
     letter-spacing: 1px;
@@ -839,7 +842,7 @@ a.more {
     padding: 62px 0 0 0;
     height: 98px;
     font-family: 'Open Sans', Arial, sans-serif;
-    text-shadow: 0 0 1px #fff,
+    text-shadow: 0 0 1px #1f1f1f,
     0 1px 2px rgba(0,0,0,0.3);
 }
 
@@ -914,7 +917,7 @@ img.zoom-img {
     -moz-transition-duration: 250ms;
 }
 .blog-section  h3 {
-    color: #34495E;
+    color: rgba(255, 199, 80, 0.85);
     font-size:4em;
     font-weight:400;
     font-family: 'Playball', cursive;
@@ -922,33 +925,33 @@ img.zoom-img {
 }
 .blog h5 {
     color: #1BBC9B;
-    font-size: 1.2em;
+    font-size: 24px;
     font-weight: 400;
     margin: 0.25em 0;
 }
 .blog a h4{
     color: #fff;
-    font-size: 1.4em;
+    font-size: 18px;
     font-weight: 400;
     text-decoration:none;
     line-height: 1.4em;
 }
 .blog-text {
-    background: #34495E;
-    width: 40%;
+    background: #E6FAF9;
+    width: 100%;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     padding: 3.95em 3em;
 }
 .blog-img {
-    width: 60%;
+    width: 100%;
     margin: 0;
     padding: 0;
 }
 .blog-text p {
-    font-size: 0.9em;
+    font-size: 20px;
     line-height: 1.8em;
-    color: #fff;
+    color: #080808;
     font-weight: 400;
 }
 .blog-text.two {
@@ -1875,7 +1878,7 @@ ul.bottom-icons li a.mbl span{
         padding: 127px 15px;
     }
     .team-section {
-        /*background: url("../images/team-bg.jpg") no-repeat 0px 0px;*/
+       /* background: url("../image/images/team-bg.jpg") no-repeat 0px 0px;*/
         padding: 0em 0 4em 0;
         background-size: cover;
         -o-background-size: cover;
@@ -2261,7 +2264,7 @@ ul.bottom-icons li a.mbl span{
         font-size: 2.3em;
     }
     .team-section {
-        /*background: url("../images/team-bg.jpg") no-repeat 0px 0px;*/
+      /*  background: url("../image/images/team-bg.jpg") no-repeat 0px 0px*/;
         padding: 0em 0 2em 0;
         background-size: cover;
         -o-background-size: cover;

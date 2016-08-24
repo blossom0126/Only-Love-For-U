@@ -6,7 +6,7 @@ class PersonCenter extends Component {
   render() {
     return (
         <div>
-        <div>个人中心</div>
+        <div></div>
           </div>
 
     );

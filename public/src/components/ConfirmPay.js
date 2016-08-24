@@ -10,50 +10,45 @@ class ConfirmPay extends Component {
   }
 
   readyToPay () {
+    /* <div className="wel-grid">
+     <div className="col-md-4 welcome-text">
+     <h3>Welcome</h3>
+     <h4>TO RESTAURANT!</h4>
+     <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+     </div>
+     <div className="col-md-8 welcome-img">
+     <img src="images/img_03.jpg" className="img-responsive" alt="" />
+     </div>
+     <div className="clearfix"> </div>
+     </div>*/
     this.props.ConfirmBuy(this.props.params.id);
   }
   
   render() {
     const {_id,name,tel,address,more,cakeName,image,price}=this.props.orderInfo;
     return (
-            <div>
-                <div className='container col-md-12'>
-                    <div className="col-md-7">
-                    <img src={ '../' + image}></img>
-                    <span>{cakeName}</span>                       
-                    </div>
-                    <div className="col-md-5">
-                        <table>
-                        <tbody>
-                            <tr>
-                                <td>订单编号: </td>
-                                <td>{_id}</td>
-                            </tr>
-                            <tr>
-                                <td>真实姓名: </td>
-                                <td>{name}</td>
-                            </tr>
-                            <tr>
-                                <td>联系电话: </td>
-                                <td>{tel}</td>
-                            </tr>
-                            <tr>
-                                <td>收货地址: </td>
-                                <td>{address}</td>
-                            </tr>
-                            <tr>
-                                <td>实付价格: </td>
-                                <td>{price}</td>
-                            </tr>
-                            <tr>
-                                <td>备注信息: </td>
-                                <td>{more}</td>
-                            </tr>
-                            </tbody>
-                        </table>
+            <div className="liuxiananshen">
+              <div className="welcome-section">
+                <div className="container">
+                  <div className="about-grid ">
+
+                    <div className="col-md-8 about-text">
+                     <div className="col-md-4 about-img">
+                      <img src={ '../' + image} className="img-responsive zoom-img" alt="" />
+                    </div>  <h3>Your Order!</h3>
+                      <h4>{cakeName}</h4>
+                      <p>订单编号:{_id}</p>
+                      <p>真实姓名:{name}</p>
+                      <p>联系电话: {tel}</p>
+                      <p>收货地址:{address}</p>
+                      <p>实付价格:{price}</p>
+                      <p>备注信息:{more}</p>
+                      <p>真实姓名:{name}</p>
                       <button onClick={this.readyToPay.bind(this)} type="button"className="btn btn-info">确认支付</button>
                     </div>
+                   </div>
                 </div>
+              </div>
             </div>
         );
   }
