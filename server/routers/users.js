@@ -11,7 +11,6 @@ router.post('/', (req, res, next)=> {
   const username = req.body.username;
   const password = req.body.password;
   const rePassword = req.body.rePassword;
-//  console.log('wangting');
   /*const rePassword = req.body.rePassword;*/
 
   function checkUsername(username) {
@@ -52,7 +51,6 @@ router.post('/', (req, res, next)=> {
 });
 
 router.post('/logining', (req, res) => {
-  console.log('333333333333333')
   User.findOne({username: req.body.username,password:req.body.password}, (err, data)=> {
     if(!data) {
       res.status(403).send();
@@ -71,9 +69,7 @@ router.post('/logining', (req, res) => {
 });
 
 router.get('/logining',(req,res) => {
-  console.log('---------');
   LoginCookie.findOne({UUID:req.cookies.UUID},(err,data)=>{
-    console.log(data);
     if (data) {
       res.status(200).send(data.username);
     } 
