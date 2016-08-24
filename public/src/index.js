@@ -1,6 +1,6 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import {render} from 'react-dom';
-import {Router, Route, browserHistory} from 'react-router';
+import {Router, Route, browserHistory,IndexRoute} from 'react-router';
 import CakeDetailContainer from './container/CakeDetailContainer';
 import OrderListContainer from './container/OrderListContainer';
 import CakesList from './components/CakeList';
@@ -27,6 +27,7 @@ import cakeDetailRequestMiddleware from './middlewares/cakeDetailRequestMiddlewa
 import loginRequestMiddleware from './middlewares/loginRequestMiddleware';
 import orderRequestMiddleware from './middlewares/orderRequestMiddleware';
 import validLoginRequestMiddleware from './middlewares/validLoginRequestMiddleware';
+import {validLogin} from './actions/validLogin';
 import getOrderInfoMiddleware from './middlewares/getOrderInfoMiddleware';
 
 
@@ -41,27 +42,30 @@ store.dispatch({
   type: 'INIT'
 });
 
+function validateLogin() {
+  store.dispatch(validLogin());
+}
+
 render(
     <Provider store={store}>
       <Router history={browserHistory}>
 
        
         <Route path="/" component={MainView}>
-          <IndexRoute  component={APP}/>
+          <IndexRoute component={APP}/>
           <Route path="/login" component={Login}/>
           <Route path="/cakelist" component={CakesList}/>
           <Route path="/brandstory" component={BrandStory}/>
           <Route path="/slideshow" component={Slide}/>
-          <Route path="/presoncenter" component={Presoncenter}/>
-          <Route path="/exclusive" component={Exclusive}/>
-          <Route path="/presoncenter" component={Presoncenter}/>
+          <Route path="/presoncenter" component={Presoncenter} onEnter={validateLogin}/>
+          <Route path="/exclusive" component={Exclusive} onEnter={validateLogin}/>
           <Route path="/orderlist" component={Orderlist}/>
           <Route path="/confirmpay" component={ConfirmPay}/>
           <Route path="/signup" component={AddTodo}/>
           <Route path="/contact" component={Contact}/>
           <Route path="/404" component={Notfound}/>
-          <Route path="/cakedetail/:id" component={CakeDetailContainer}/>
-          <Route path="/orderlist/:id" component={OrderListContainer}/>
+          <Route path="/cakedetail/:id" component={CakeDetailContainer} onEnter={validateLogin}/>
+          <Route path="/orderlist/:id" component={OrderListContainer} onEnter={validateLogin}/>
         </Route>
       </Router>
     </Provider>,
