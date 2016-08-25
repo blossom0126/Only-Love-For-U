@@ -25,6 +25,7 @@ class ConfirmPay extends Component {
   }
   
   render() {
+    const username=this.props.loginusername;
     const {_id,name,tel,address,more,cakeName,image,price}=this.props.orderInfo;
     return (
             <div className="confirmpay">
@@ -33,21 +34,22 @@ class ConfirmPay extends Component {
                   <div className="about-grid ">
 
                     <div className="col-md-8 about-text">
+                      <h4 style={{marginBottom:'10px'}}>Hello！{username} Your Order!</h4>
                      <div className="col-md-4 about-img">
-                      <img src={ '../' + image} className="img-responsive zoom-img" alt="" />
+                      <img src={ '../' + image} className="img-responsive zoom-img" style={{marginLeft:'30px'}}alt="" />
                     </div>
-                      <div  style={{textAlign:'center'}}>
-                        <h3>Your Order!</h3>
-                      <h4>{cakeName}</h4>
+
+                      <div  style={{marginLeft:'540px'}}>
+                      <h4>蛋糕名称：{cakeName}</h4>
                       <p>订单编号:{_id}</p>
                       <p>真实姓名:{name}</p>
                       <p>联系电话: {tel}</p>
                       <p>收货地址:{address}</p>
-                      <p>实付价格:{price}</p>
+                      <p>实付价格:{price}元</p>
                       <p>备注信息:{more}</p>
 
                         </div>
-                      <div   style={{marginTop:'20px',marginLeft:'766px'}}>
+                      <div   style={{marginTop:'20px',marginLeft:'800px'}}>
                       <button onClick={this.readyToPay.bind(this)} type="button"className="btn btn-info">确认支付</button>
                     </div>
                       </div>

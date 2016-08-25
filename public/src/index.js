@@ -16,7 +16,7 @@ import Contact from './components/Contact';
 import AddTodo from './container/AddTodo';
 import cakeList from './reducers';
 import Exclusive from './components/Exclusive';
-import Presoncenter from './components/PersonCenter';
+import Presoncenter from './container/PersonCenter';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import cakeRequestMiddleware from './middlewares/cakeRequestMiddleware';

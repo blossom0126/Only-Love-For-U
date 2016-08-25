@@ -5,10 +5,10 @@ import React, {Component} from 'react';// eslint-disable-line no-unused-vars
 class BrandStory extends Component {
   render() {
     return (
-        <div>
-          <div className="about-section">
+        <div >
+          <div className="about-section brandstory">
             <div className="container">
-              <h2>About Only Cake</h2>
+
               <div className="about-section">
                 <div className="col-md-7 ab-text">
                   <h4>Welcome To <span>Only Cake</span></h4>
@@ -29,6 +29,7 @@ class BrandStory extends Component {
                       Only Cake拒绝付费广告、坚信体验与口碑相传<br/>
 
                       Only Cake坚持合理利润，坚持给予“您”最高性价比、关怀与便捷</p>
+                    <h2>About Only Cake</h2>
                   </div>
                 </div>
                 <div className="col-md-5 chef">
@@ -48,35 +49,35 @@ class BrandStory extends Component {
                       <li>
                         <div className="ch-item ch-img-1" style={{background:'url(../image/cook/images.jpg)'}}>
                           <div className="ch-info">
-                            <h3>Kim Jae Joong</h3>
-                            <p>only cake<a href="#"></a>only cake</p>
+                            <h3>秦齐&韩亦乐&王根旺</h3>
+                            <p>Qinqi<a href="#"></a>Hanyile</p>
                           </div>
                         </div>
-                        <h4>Kim Jae Joong</h4>
-                        <p>JYJ&&&CONAN</p>
-                        <a className="more" href="#">More Info </a>
+                        <h4>秦齐&韩亦乐&王根旺</h4>
+                        <p>Qinqi&Hanyile&Wanggenwang</p>
+                        <a className="more" href="#">颜值担当</a>
                       </li>
                       <li>
                         <div className="ch-item ch-img-2" style={{background:'url(../image/cook/images02.jpg)'}}>
                           <div className="ch-info">
-                            <h3>Kim Jae Joong</h3>
-                            <p>only cake<a href="#"></a>only cake</p>
+                            <h3>王婷&王盼</h3>
+                            <p>Wangting<a href="#"></a>Wangpan</p>
                           </div>
                         </div>
-                        <h4>Kim Jae Joong</h4>
-                        <p>JYJ&&&CONAN</p>
-                        <a className="more" href="#">More Info </a>
+                        <h4>王婷&王盼</h4>
+                        <p>Wangting&Wangpan</p>
+                        <a className="more" href="#">最佳拍档</a>
                       </li>
                       <li>
                         <div className="ch-item ch-img-3" style={{background:'url(../image/cook/images.jpg)'}}>
                           <div className="ch-info">
-                            <h3>Kim Jae Joong</h3>
-                            <p>only cake<a href="#"></a>only cake</p>
+                            <h3>崔倩&刘茹</h3>
+                            <p>CuiQian<a href="#"></a>LiuRu</p>
                           </div>
                         </div>
-                        <h4>Kim Jae Joong</h4>
-                        <p>JYJ&&&CONAN</p>
-                        <a className="more" href="#">More Info </a>
+                        <h4>崔倩&刘茹</h4>
+                        <p>CuiQian&LiuRu</p>
+                        <a className="more" href="#">技术担当</a>
                       </li>
                     </ul>
                   </div>

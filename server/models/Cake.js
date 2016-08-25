@@ -9,7 +9,11 @@ const Cake = mongoose.model('Cake', {
   name:String,
   intro:String,
   style:String,
-  image:String
+  image:String,
+  price:Number,
+  size:String,
+  infore:String,
+  inforc:String
 });
 
 export default Cake;

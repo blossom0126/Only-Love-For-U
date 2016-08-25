@@ -22,7 +22,7 @@ class OrderList extends Component {
     order.cakeName = this.props.order.name;
     order.image = this.props.order.image;
     order.isPay = false;
-    order.price = 100;
+    order.price = this.props.order.price;
     this.props.confirmOrderFunction(order);
 
   }
@@ -30,7 +30,7 @@ class OrderList extends Component {
 
   render() {
     const order = this.props.order;
-    // const id = this.props.order._id;
+    const login = this.props.loginusername;
     return (
         <div className="orderlist">
           <div className="welcome-section">
@@ -39,15 +39,16 @@ class OrderList extends Component {
                 <div className="col-md-8 about-text">
                   <div className="col-md-4 about-img">
                     <p>订购的蛋糕信息: </p>
-                    <div>{order.name}</div>
+                    <div>{order.style}￥：{order.price}</div>
+
                     <img src={ '../' + order.image} className="img-responsive zoom-img"></img>
                   </div>
-                  <h3>您好, 请填写购买信息:</h3>
+                  <h3>   {login},您好, 请填写购买信息:</h3><br/>
 
                     <form action="#" className="form-horizontal">
                       <div className="form-group">
 
-                        <div className="col-md-5 col-md-5">
+                        <div className="col-md-6 col-md-5" >
                           <label htmlFor="inputEmail3" className="control-label">真实姓名: </label>
                           <input type="text"
                                  className="form-control"
@@ -55,7 +56,6 @@ class OrderList extends Component {
                                  ref="inputName"
                           />
                         </div>
-
                         <div className="col-md-5 col-md-5 ">
                           <label htmlFor="inputEmail3" className="control-label">联系电话: </label>
                           <input type="text"
@@ -86,7 +86,7 @@ class OrderList extends Component {
 
                         </div>
                       </form>
-<div  style={{marginTop:'20px',marginLeft:'766px'}}>
+<div  style={{marginTop:'20px',marginLeft:'800px'}}>
                   <button  type="button"
                            className="btn btn-info"
                            onClick={this.confirm.bind(this)}>确认订单

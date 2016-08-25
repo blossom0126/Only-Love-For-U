@@ -1,11 +1,11 @@
 .cakecomcui{
-    height: 560px;
+    height: 390px;
 }
 .orderlist{
-    height: 520px;
+    height: 410px;
 }
 .confirmpay{
-    height: 480px;
+    height: 410px;
 }
 .cakedetail{
     height: 400px;
@@ -14,7 +14,7 @@
     height: 600px;
 }
 .aaaa{
-    height: 450px;
+    height: 500px;
 }
 .loginands{
     margin-left:3px;
@@ -637,9 +637,9 @@ li.lost {
     color: #34495E;
 }
 .welcome-text  p,.about-text p{
-    font-size:16px;
+    font-size:18px;
     line-height: 1.8em;
-    color: #080808;
+    color: #b0916a;
     font-weight: 400;
 }
 .about-text p{
@@ -651,20 +651,21 @@ li.lost {
     float: left;
     width: 40%;
 }
-.about-text h3 {
-    color: #1BBC9B;
-    font-size: 3em;
+.about-text h4 {
+    color:#b0916a;
+    font-size: 2em;
     font-family: 'Playball', cursive;
     font-weight: 400;
 }
 .about-text {
     width: 100%;
     padding: 0;
-    background: #F7F7F7;
-    padding:6.63em 3em;
-    margin: 0 auto;
+    background: rgba(247, 247, 247, 0.41);
+    padding:2em;
+    margin: -16px;
     text-align: left;
 }
+
 /*--------about---------*/
 .logo.three{
     margin: 0;
@@ -1462,13 +1463,12 @@ form.con input[type="submit"]:hover{
 /*--------footer-------*/
 .footer {
     background: #272723;
-    padding:3em 0;
-    margin-top: 80px;
+    padding:1em 0;
+    margin-top: 25px;
 }
 .logo.two a h3 {
     color: #1BBC9B;
     font-size:3em;
-    margin-top: 15px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
 }
@@ -1479,24 +1479,24 @@ form.con input[type="submit"]:hover{
     margin-bottom: 1em;
 }
 .footer-grid  p {
-    font-size: 0.8em;
+    font-size: 20px;
     line-height: 1.8em;
     color: #fff;
     font-weight: 400;
     margin: 0.8em 0;
 }
 .logo.two {
-    margin-top: 4em;
+    margin-top: 1em;
 }
 .logo a h3 span {
     font-weight: 400;
     color: #fff;
     font-family: 'Niconne', cursive;
 }
-.support{
-    margin-top: 2em;
-}
+
 .bottom-nav ul li {
+    float: left;
+    margin-right: 5px;
     display:block;
     margin-bottom: 3px;
 }
@@ -1507,14 +1507,14 @@ form.con input[type="submit"]:hover{
     display: block;
     padding:0;
     font-weight: 500;
-    font-size: 0.9em;
+    font-size: 16px;
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
     background:none;
 }
 .bottom-nav ul li a:hover{
-    color: #272723;
+    color: #fff8c1;
 }
 ul.bottom-icons li{
     display: block;
@@ -1543,7 +1543,7 @@ ul.bottom-icons li a.mbl span{
     background-position: -68px -103px;
 }
 .bottom-icons li , .bottom-icons li a{
-    font-size: 0.95em;
+    font-size: 18px;
     text-decoration: none;
     color: #fff;
     transition: 0.5s all;
@@ -1557,35 +1557,9 @@ ul.bottom-icons li a.mbl span{
 .bottom-icons.two li a {
     line-height: 2.4em;
 }
-.support input[type="text"] {
-    width: 61%;
-    padding: 7px;
-    font-size: 11px;
-    text-align: left;
-    font-weight: 400;
-    border: 1px solid #fff;
-    outline: none;
-    margin: 0px -6px 0 0;
-    font-family: 'Open Sans', sans-serif;
-}
-.support input[type="submit"]{
-    background: #1BBC9B;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    cursor: pointer;
-    border: 0;
-    color: #fff;
-    font-weight:600;
-    height: 31px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    text-transform: uppercase;
-    width: 80px!important;
-    text-align: center;
-}
+
 .copy-right{
-    background: #1BBC9B;
+    background: rgba(8, 8, 8, 0.38);
     padding: 1em 0;
     margin: 0 auto;
     text-align: center;
@@ -1850,7 +1824,7 @@ ul.bottom-icons li a.mbl span{
         font-size: 2em;
     }
     .welcome-text p, .about-text p {
-        font-size:18px;
+        font-size:24px;
         overflow: hidden;
         height: 99px;
     }
@@ -2064,6 +2038,7 @@ ul.bottom-icons li a.mbl span{
     .footer-grid {
         text-align: center;
         margin-bottom: 1em;
+        margin-left:110px;
     }
     .menu-grid {
         float: left;
@@ -2357,9 +2332,13 @@ ul.bottom-icons li a.mbl span{
     .bottom-nav {
         text-align:center;
     }
+    .bottom-nav ul{
+     float:left;
+    }
     .footer-grid {
         margin-bottom: 0.7em;
         text-align: center;
+        margin-left:110px;
     }
     .error-btn a {
         font-size: 1em;
@@ -2668,4 +2647,38 @@ ul.bottom-icons li a.mbl span{
         line-height: 65px;
         font-size: 2em;
     }
+}
+#exclusive_01{
+    transform:rotate(7deg);
+}
+#exclusive_02{
+    transform:rotate(-8deg);
+}
+#exclusive_03{
+    transform:rotate(-9deg);
+}
+#exclusive_04{
+    transform:rotate(10deg);
+}
+#blank{
+    height: 300px;
+}
+.exclusive_img_size{
+    width: 240px;
+    height: 320px;
+}
+.exclusive_img_style{
+    display: inline;
+    float:left;
+    box-shadow:2px 2px 2px 3px #aaaaaa;
+    padding:10px;
+}
+.exclusive{
+    height:800px;
+}
+.brandstory{
+    height:980px;
+}
+.person{
+    height:390px;
 }

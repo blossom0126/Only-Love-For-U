@@ -6,44 +6,38 @@ import {Link} from 'react-router';
 class Footer extends Component {
   render() {
     return (
-        <div>
-        <div className="footer">
+        <div >
+        <div className="footer" style={{height:'150px'}}>
           <div className="container">
             <div className="col-md-3 footer-grid">
               <div className="logo two">
-                <a href="index.html"><h3>ONLY<span>cakes</span></h3></a>
+                <a><h3>ONLY<span>cakes</span></h3></a>
               </div>
             </div>
-            <div className=" col-md-3 footer-grid footer-grid2">
+            <div className=" col-md-4 footer-grid footer-grid2">
               <div className="bottom-nav">
-                <h4>LEARN</h4>
-                <ul>
+                <h4>About Only cakes</h4>
+                <ul >
                   <li><Link to="/">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</Link></li>
-
                   <li><Link to="/cakelist">蛋糕名录</Link></li>
                   <li><Link to="/exclusive">唯依专区</Link></li>
                   <li><Link to="/brandstory">品牌故事</Link></li>
                   <li><Link to="/contact">订购帮助</Link></li>
-                  <div className="clearfix"></div>
                 </ul>
-              </div>
-            </div>
-            <div className=" col-md-3 footer-grid">
-              <div className="Office Address">
-                <h4>ADDRESS</h4>
-                <ul className="bottom-icons">
-                  <li><a className="home" href="#"><span> </span></a>Shanxi，Xian，China</li>
-                  <li><a className="mail" href=""><span> </span>704069886@example.com</a></li>
-                  <li><a className="mbl" href="#"><span> </span></a></li>
-                  <div className="clearfix"></div>
-                </ul>
-              </div>
-            </div>
-            <div className="col-md-3 footer-grid">
-              <h4>SUPPORT WITH</h4>
 
+              </div>
             </div>
-            <div className="clearfix"></div>
+            <div className="footer-grid">
+                <h4 style={{marginLeft:'700px'}} > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADDRESS</h4>
+                <ul style={{marginLeft:'700px'}}   className="bottom-icons">
+                  <li ><a className="home" href="#"><span> </span></a>Shanxi，Xian，China</li>
+                </ul>
+            </div>
+          </div>
+          <div className="copy-right">
+            <div className="container">
+              <p>Copyright &copy; 2016 All Rights Reserved . Design by Only Cake Team! </p>
+            </div>
           </div>
         </div>
           </div>
