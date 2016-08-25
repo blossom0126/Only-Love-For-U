@@ -1,3 +1,12 @@
+.cakecomcui{
+    height: 560px;
+}
+.orderlist{
+    height: 520px;
+}
+.confirmpay{
+    height: 480px;
+}
 .cakedetail{
     height: 400px;
 }
@@ -41,13 +50,7 @@ html, body{
    border: none;
    opacity: 0.5;
 }
-body a,.grid_1,plan_1,plan_1.one,plan_1.two{
-    transition:0.5s all;
-    -webkit-transition:0.5s all;
-    -moz-transition:0.5s all;
-    -o-transition:0.5s all;
-    -ms-transition:0.5s all;
-}
+
 a:hover{
     text-decoration:none;
 }
@@ -305,13 +308,7 @@ html, body{
     font-size: 100%;
     background: #FFf;
 }
-body a,.grid_1,plan_1,plan_1.one,plan_1.two{
-    transition:0.5s all;
-    -webkit-transition:0.5s all;
-    -moz-transition:0.5s all;
-    -o-transition:0.5s all;
-    -ms-transition:0.5s all;
-}
+
 a:hover{
     text-decoration:none;
 }
@@ -640,13 +637,13 @@ li.lost {
     color: #34495E;
 }
 .welcome-text  p,.about-text p{
-    font-size: 0.9em;
+    font-size:16px;
     line-height: 1.8em;
-    color: #fff;
+    color: #080808;
     font-weight: 400;
 }
 .about-text p{
-    color:#999;
+    color: #999;
 }
 .about-img {
     margin: 0;
@@ -666,7 +663,7 @@ li.lost {
     background: #F7F7F7;
     padding:6.63em 3em;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
 }
 /*--------about---------*/
 .logo.three{
@@ -1853,7 +1850,7 @@ ul.bottom-icons li a.mbl span{
         font-size: 2em;
     }
     .welcome-text p, .about-text p {
-        font-size: 0.85em;
+        font-size:18px;
         overflow: hidden;
         height: 99px;
     }
@@ -1863,7 +1860,7 @@ ul.bottom-icons li a.mbl span{
         float: right;
     }
     .about-text p {
-        font-size: 0.85em;
+        font-size: 18px;
         overflow: hidden;
         height: 119px;
     }

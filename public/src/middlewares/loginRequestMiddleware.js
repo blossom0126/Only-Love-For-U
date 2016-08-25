@@ -10,14 +10,13 @@ const loginRequestMiddleware = store =>next=>action=> {// eslint-disable-line no
           username: action.text.username,
           password: action.text.password
         })
-        .end((err, data)=> {// eslint-disable-line no-unused-vars
+        .end((err, data)=> {
           if (data.status===201) {
-            console.log(data.body.data.username);
-             browserHistory.push('/');
-             next({
-               type: 'Loggin_return',
-               username:data.body.data.username
-             });
+            browserHistory.push('/');
+            next({
+              type: 'Loggin_return',
+              username:data.body.data.username
+            });
           }
           else {
             next({
@@ -25,10 +24,8 @@ const loginRequestMiddleware = store =>next=>action=> {// eslint-disable-line no
               username: '登录'
             });
           }
-
         });
     break;
-
   }
   next(action);
 };

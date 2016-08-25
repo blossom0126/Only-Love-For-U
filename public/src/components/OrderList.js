@@ -32,69 +32,72 @@ class OrderList extends Component {
     const order = this.props.order;
     // const id = this.props.order._id;
     return (
-        <div className="liuxiananshen">
-            <div className='col-md-2'></div>
-            <div className="container col-md-8 orderlistborder text-center">
-              <br/><br/>
-              <p>您好, 请填写购买信息:</p>
-              <div className="col-md-11">
-                <form action="#" className="form-horizontal">
-                  <div className="form-group">
-                    <label htmlFor="inputEmail3" className="col-md-4 col-md-6 control-label">真实姓名: </label>
-                    <div className="col-md-8 col-md-6">
-                      <input type="text"
-                             className="form-control"
-                             id="inputEmail3"
-                             ref="inputName"
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="inputEmail3" className="col-md-4 col-md-6 control-label">联系电话: </label>
-                    <div className="col-md-8 col-md-6">
-                      <input type="text"
-                             className="form-control"
-                             id="inputEmail3"
-                             ref="inputTel"
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="inputEmail3" className="col-md-4 col-md-6 control-label">收货地址: </label>
-                    <div className="col-md-8 col-md-6">
-                      <input type="text"
-                             className="form-control"
-                             id="inputEmail3"
-                             ref="inputAddress"
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="inputEmail3" className="col-md-4 col-md-6 control-label">备注: </label>
-                    <div className="col-md-8 col-md-6">
-                      <input type="text"
-                             className="form-control"
-                             id="inputEmail3"
-                             ref="inputMore"
-                      />
-                    </div>
-                  </div>
-                  <div>
+        <div className="orderlist">
+          <div className="welcome-section">
+            <div className="container">
+              <div className="about-grid ">
+                <div className="col-md-8 about-text">
+                  <div className="col-md-4 about-img">
                     <p>订购的蛋糕信息: </p>
                     <div>{order.name}</div>
-                    <img src={ '../' + order.image}></img>
+                    <img src={ '../' + order.image} className="img-responsive zoom-img"></img>
                   </div>
-                  <br/><br/>
-                  <div className="col-md-offset-10 col-sm-10">
-                    <button  type="button"
-                             className="btn btn-info"
-                             onClick={this.confirm.bind(this)}>确认订单
-                    </button>
-                  </div>
-                  <br/><br/>
-                </form>
+                  <h3>您好, 请填写购买信息:</h3>
+
+                    <form action="#" className="form-horizontal">
+                      <div className="form-group">
+
+                        <div className="col-md-5 col-md-5">
+                          <label htmlFor="inputEmail3" className="control-label">真实姓名: </label>
+                          <input type="text"
+                                 className="form-control"
+                                 id="inputEmail3"
+                                 ref="inputName"
+                          />
+                        </div>
+
+                        <div className="col-md-5 col-md-5 ">
+                          <label htmlFor="inputEmail3" className="control-label">联系电话: </label>
+                          <input type="text"
+                                 className="form-control"
+                                 id="inputEmail3"
+                                 ref="inputTel"
+                          />
+                        </div>
+                          <div className="col-md-5 col-md-5">
+                            <label htmlFor="inputEmail3" className="control-label">收货地址: </label>
+                            <input type="text"
+                                   className="form-control"
+                                   id="inputEmail3"
+                                   ref="inputAddress"
+                            />
+                          </div>
+
+
+
+                        <div className="col-md-5 col-md-5">
+                          <label htmlFor="inputEmail3" className="control-label">备注: </label>
+                          <input type="text"
+                                 className="form-control"
+                                 id="inputEmail3"
+                                 ref="inputMore"
+                          />
+                        </div>
+
+                        </div>
+                      </form>
+<div  style={{marginTop:'20px',marginLeft:'766px'}}>
+                  <button  type="button"
+                           className="btn btn-info"
+                           onClick={this.confirm.bind(this)}>确认订单
+                  </button>
+</div>
+                </div>
               </div>
             </div>
+          </div>
+
+
           </div>
 
     );
