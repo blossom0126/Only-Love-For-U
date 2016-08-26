@@ -26,7 +26,7 @@ class CakeDetailComponent extends Component {
                 <div className="about-grid ">
                   <div className="col-md-8 about-text">
                     <div className="col-md-4 about-img">
-                      <img src={ '../' + image} className="img-responsive zoom-img img-rounded"/>
+                      <img src={ '../' + image} className="img-responsive zoom-img img-rounded" title={inforc}/>
                     </div>
                     <div style={{marginTop:'20px',marginLeft:'480px'}}>
                     <h3 style={{color:'#b0916a'}}>CakeDetail--{style}</h3>

@@ -47,7 +47,7 @@ class BrandStory extends Component {
                   <div className="col-md-8 team-right">
                     <ul className="ch-grid">
                       <li>
-                        <div className="ch-item ch-img-1" style={{background:'url(../image/cook/images.jpg)'}}>
+                        <div className="ch-item ch-img-1" style={{background:'url(../image/cook/01.png)'}}>
                           <div className="ch-info">
                             <h3>秦齐&韩亦乐&王根旺</h3>
                             <p>Qinqi<a href="#"></a>Hanyile</p>
@@ -58,7 +58,7 @@ class BrandStory extends Component {
                         <a className="more" href="#">颜值担当</a>
                       </li>
                       <li>
-                        <div className="ch-item ch-img-2" style={{background:'url(../image/cook/images02.jpg)'}}>
+                        <div className="ch-item ch-img-2" style={{background:'url(../image/cook/02.png)'}}>
                           <div className="ch-info">
                             <h3>王婷&王盼</h3>
                             <p>Wangting<a href="#"></a>Wangpan</p>
@@ -69,7 +69,7 @@ class BrandStory extends Component {
                         <a className="more" href="#">最佳拍档</a>
                       </li>
                       <li>
-                        <div className="ch-item ch-img-3" style={{background:'url(../image/cook/images.jpg)'}}>
+                        <div className="ch-item ch-img-3" style={{background:'url(../image/cook/03.png)'}}>
                           <div className="ch-info">
                             <h3>崔倩&刘茹</h3>
                             <p>CuiQian<a href="#"></a>LiuRu</p>
