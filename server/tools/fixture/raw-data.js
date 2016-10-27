@@ -96,11 +96,21 @@ export default {
   }],
   User:[{
     username:'wangting@163.com',
-    password:'wt1234'
+    password:'wt1234',
+    telphone:'',
+    address:'',
+    realName:''
+
   }, 
   {
     username: 'liuru@163.com',
-    password: '111111'
+    password: '111111',
+    telphone:'',
+    address:'',
+    realName:'',
+    age:      '',
+    wechat:    ''
+
   }],
   Order:[{
     username:'其实我是黄蓉＿＿嘿嘿嘿',
@@ -108,7 +118,7 @@ export default {
     tel:'110',
     address:'china',
     more:'111',
-    cakeName:'456',
+    cakeName:'f456',
     image:'image/cakelist/02.jpg',
     isPay:false,
     price:100

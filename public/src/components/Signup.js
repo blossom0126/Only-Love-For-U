@@ -58,7 +58,7 @@ class SignUp extends Component {
     let password = this.refs.inputPwd.value.trim();
     let password_2 = this.refs.rePassword.value.trim();
     this.state.passwordSameResult = (password === password_2);
-    if((password === password_2))
+    if(password === password_2)
       this.refs.passwordWrongSame.innerHTML = '';
     else
       this.refs.passwordWrongSame.innerHTML = '两次密码不一致';

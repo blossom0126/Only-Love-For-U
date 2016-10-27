@@ -30,6 +30,7 @@
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-frame-component": "^0.6.5",
+    "react-native": "^0.35.0",
     "react-redux": "^4.4.5",
     "react-router": "2.6.1",
     "redux": "^3.5.2",
